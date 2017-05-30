@@ -1,0 +1,10 @@
+.graph {
+  position: relative;
+  margin: auto;
+  height: 100%;
+  width: 100%;
+}
+/*canvas {
+  max-width:80%;
+  max-height:80%;
+}*/

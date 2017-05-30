@@ -9,13 +9,13 @@ var app = app || {};
 
   stock.stockData = [];
 
-  stock.getStockInfo = (companyTicker, startDate, endDate, callback) => {
+  stock.getStockInfo = (companyTicker, callback) => {
     let params = {
+      startDate: '20160925',
+      endDate: '20161120',
       symbol: companyTicker,
-      startDate: startDate,
-      endDate: endDate,
-      type: 'minutes',
-      interval: '60',
+      type: 'daily',
+      interval: '1',
       volume: 'total',
       exchange: 'NYSE,AMEX,NASDAQ',
     };
