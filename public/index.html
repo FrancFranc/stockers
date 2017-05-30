@@ -43,25 +43,49 @@
     <h1> STOCKERS </h1>
   </header>
   <main>
-    <div id="search-container">
-      <form id="search">
-        <input type="text" placeholder="company" id="company" />
-        <input type="submit" value="Search" id="submit" />
-      </form>
-    </div>
-    <div id="favorites">
-      <table id="Table-template">
-        <thead>
-          <tr>
-            <th> Symbol </th>
-            <th> Name </th>
-            <th> Currency </th>
-            <th> Last Price </th>
-            <th> Change </th>
-          </tr>
-        </thead>
-      </table>
-    </div>
+
+    <section id="homepage">
+      <div>
+        <img class='Logo' src="img/heisberg-Logo.png">
+        <h1> STOCKERS </h1>
+      </div>
+      <div id="search-container">
+        <form id="search">
+          <input type="text" placeholder="Company Name" id="company" />
+          <input type="submit" value="Search" id="submit" />
+        </form>
+      </div>
+      <div id="favorites">
+        <table id="Table-template">
+          <thead>
+            <tr>
+              <th> Symbol </th>
+              <th> Name </th>
+              <th> Currency </th>
+              <th> Last Price </th>
+              <th> Change </th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+    </section>
+
+    <section id="result">
+      <div class="back-fav">
+        <form id="">
+          <input type="submit" value="Favorite Stocks" id="submit" /></form>
+      </div>
+      <div class="left-side">
+        <div class="graph"> </div>
+        <form id="add-fav">
+          <input type="submit" value="Add To Favorite" id="submit" /></form>
+        <form id="comments">
+          <input type="text" placeholder="My Comment" id="comments" /></form>
+      </div>
+    </section>
+
+    <section id="about-us">
+    </section>
   </main>
   <footer> </footer>
 
