@@ -8,29 +8,65 @@
   <meta property="og:url" content="" />
   <meta property="og:image" content="" />
   <meta property="og:description" content="STOCK your protfolio! Track it and Manage it!" />
-  <link rel="stylesheet" type="text/css" href="styles/reset.css" />
-  <link rel="stylesheet" type="text/css" href="styles/base.css" />
-  <link rel="stylesheet" type="text/css" href="styles/layout.css" />
-  <link rel="stylesheet" type="text/css" href="styles/modules.css" />
+  <link rel="stylesheet" type="text/css" href="styles/base.css"/>
+  <link rel="stylesheet" type="text/css" href="styles/layout.css"/>
+  <link rel="stylesheet" type="text/css" href="styles/module.css"/>
+  <link rel="stylesheet" type="text/css" href="styles/reset.css"/>
+
+  <script id="table-template" type="text/x-handlebars-template">
+    <table>
+      <thead>
+        <th>Ticker</th>
+        <th>Name</th>
+        <th>Currency</th>
+        <th>Last Price</th>
+        <th>Change</th>
+      </thead>
+      <tbody>
+        {{#users}}
+        <tr>
+          <td>{{Ticker}}</td>
+          <td>{{Name}}</td>
+          <td>{{Currency}}</td>
+          <td>{{Last Price}}</td>
+          <td>{{Change}}</td>
+        </tr>
+        {{/users}}
+      </tbody>
+    </table>
+  </script>
 </head>
 
 <body>
   <header>
+    <img class='Logo' src="img/heisberg-Logo.png">
     <h1> STOCKERS </h1>
   </header>
-<main>
-  <div id="search-container">
-    <form id="search">
-      <input type="text" placeholder="company" id="company" />
-      <input type="submit" value="Search" id="submit" />
-    </form>
-  </div>
-  <div id="favorites">
-    <table> </table>
-  </div>
-</main>
-
+  <main>
+    <div id="search-container">
+      <form id="search">
+        <input type="text" placeholder="company" id="company" />
+        <input type="submit" value="Search" id="submit" />
+      </form>
+    </div>
+    <div id="favorites">
+      <table id="Table-template">
+        <thead>
+          <tr>
+            <th> Symbol </th>
+            <th> Name </th>
+            <th> Currency </th>
+            <th> Last Price </th>
+            <th> Change </th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+  </main>
   <footer> </footer>
+
+  <script src="scripts/view/app.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/page.js/1.7.1/page.min.js"></script>
   <script src="/scripts/model/stock.js"></script>
@@ -38,5 +74,6 @@
   <script src="/scripts/controller/stockController.js"></script>
   <script src="/scripts/controller/indexController.js"></script>
   <script src="/scripts/controller/routes.js"></script>
+
 </body>
 </html>
