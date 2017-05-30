@@ -27,6 +27,10 @@ var app = app || {};
         datasets: [{
           data:graph.closePrice,
         }],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: true,
       }
       // options:options,
     });
