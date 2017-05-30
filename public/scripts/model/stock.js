@@ -9,13 +9,15 @@ var app = app || {};
 
   stock.stockData = [];
 
-  stock.getStockInfo = (companyTicker, callback) => {
+  stock.getStockInfo = (companyTicker, startDate, endDate, callback) => {
     let params = {
       symbol: companyTicker,
+      startDate: startDate,
+      endDate: endDate,
       type: 'minutes',
       interval: '60',
+      volume: 'total',
       exchange: 'NYSE,AMEX,NASDAQ',
-      maxRecords: 25
     };
 
     $.ajax({ url: `/barChart`, data: params, method: 'GET' })
