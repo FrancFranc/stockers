@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/FrancFranc/stockers#readme",
   "dependencies": {
+    "body-parser": "^1.17.2",
     "express": "^4.15.3",
-    "pg": "^6.2.3"
+    "express-request-proxy": "^2.0.0"
   }
 }
