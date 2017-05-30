@@ -6,7 +6,7 @@ var app = app || {};
   const stockView = {};
 
   stockView.index = () => {
-    console.log(app.stock.stockData);
+    app.graph.createGraph();
   };
 
   module.stockView = stockView;

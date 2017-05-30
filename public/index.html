@@ -76,7 +76,10 @@
           <input type="submit" value="Favorite Stocks" id="submit" /></form>
       </div>
       <div class="left-side">
-        <div class="graph"> </div>
+        <div class="graph">
+          <canvas id="stock-graph" width="200" height="200"></canvas>
+
+        </div>
         <form id="add-fav">
           <input type="submit" value="Add To Favorite" id="submit" /></form>
         <form id="comments">
@@ -94,6 +97,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/page.js/1.7.1/page.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
   <script src="/scripts/model/stock.js"></script>
+  <script src="scripts/model/graph.js"></script>
   <script src="/scripts/view/stockView.js"></script>
   <script src="/scripts/controller/stockController.js"></script>
   <script src="/scripts/controller/indexController.js"></script>
