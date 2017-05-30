@@ -11,15 +11,15 @@ var app = app || {};
 
   stock.getStockInfo = (companyTicker, callback) => {
     let params = {
-      sources: 'AP,IF',
-      symbols: companyTicker,
-      category: 'stocks',
-      maxRecords: 15,
-      images: true
+      symbol: companyTicker,
+      type: 'minutes',
+      interval: '60',
+      exchange: 'NYSE,AMEX,NASDAQ',
+      maxRecords: 25
     };
 
-    $.get(`/barChart/?sources=${params.sources}&symbols=${params.companyTicker}&category=${params.category}&maxRecords=${params.maxRecords}&images=${params.images}`)
-      .then(data => stock.stockData = data, err => console.error(err))
+    $.ajax({ url: `/barChart`, data: params, method: 'GET' })
+      .then(data => stock.stockData = data)
       .then(callback);
   };
 
