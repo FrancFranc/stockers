@@ -1,3 +1,16 @@
 th {
   border: blue solid 2px;
 }
+
+
+
+/*Company Name Search and Submit Button*/
+
+#company {
+  width: 50%;
+}
+
+#submit-search {
+  float: right;
+  width: 50%;
+}

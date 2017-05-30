@@ -1,19 +1,20 @@
 'use strict';
 
 //Event Listener for "Search" button on homepage
-$('#submit').on('click', function(){ window.location = 'public/stock.html'});
 
-
-
-
-
+$(document).ready(function(){
+  $('#result').hide()
+});
+$('#submit-search').on('click',function(event){
+  event.preventDefault();
+  $('#favorites').hide(1000);
+  $('#result').show(1000);
+});
 
 
 // Handlebars for the data shown in table
-(function(){
-  const tableView = {};
 
-  tableView.showFav = () => {
 
-  }
-})
+
+
+// Hide section "Favourite Stocks" and show section "Stock Search Result"
