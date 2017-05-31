@@ -6,11 +6,10 @@ var app = app || {};
   const stock = {};
 
   stock.stockData = [];
+  stock.ticker = '';
 
   stock.getStockInfo = (companyTicker, startDate, callback) => {
-    if(!startDate) {
-      startDate = '20170101';
-    }
+    stock.ticker = companyTicker;
     let params = {
       symbol: companyTicker,
       startDate: startDate,

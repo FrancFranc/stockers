@@ -14,9 +14,10 @@ var app = app || {};
   };
 
 
-  news.getNewsResults = (keyword, callback) => {
+  news.getNewsResults = (companyTicker, callback) => {
     let params = {
-      keyword: keyword
+      symbols: companyTicker,
+      displayType: 'full',
     };
 
     $.ajax({ url: '/news', data: params, method: 'GET' })
