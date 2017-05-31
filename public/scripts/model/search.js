@@ -3,19 +3,19 @@
 var app = app || {};
 
 (function(module) {
-  const stock = {};
+  const search = {};
 
-  stock.searchResults = [];
+  search.searchResults = [];
 
-  stock.getSearchResults = (keyword) => {
+  search.getSearchResults = (keyword, callback) => {
     let params = {
       keyword: keyword
     };
 
     $.ajax({ url: '/search', data: params, method: 'GET' })
-      .then(data => stock.searchResults = data)
+      .then(data => search.searchResults = data)
       .then(callback);
   };
 
-  module.stock = stock;
+  module.search = search;
 })(app);

@@ -7,6 +7,7 @@ var app = app || {};
 $(document).ready(function(){
   $('#result #about-us').hide();
 
+  $('#company').on('change', app.searchController.index);
   $('#graph-start-date').on('change', app.graph.changeStartDate);
 
   $('#submit-search').on('click',function(event){

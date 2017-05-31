@@ -3,11 +3,11 @@
 var app = app || {};
 
 (function(module) {
-  const stockView = {};
+  const searchView = {};
 
-  stockView.index = () => {
-    app.search.showResults();
+  searchView.index = () => {
+    console.log(app.search.searchResults);
   };
 
-  module.stockView = stockView;
+  module.searchView = searchView;
 })(app);

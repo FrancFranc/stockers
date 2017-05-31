@@ -5,9 +5,11 @@ var app = app || {};
 (function(module) {
   const searchController = {};
 
-  searchController.index = () => {
-    app.search.getSearchResults(keyword, app.searchView.index);
+  searchController.index = keyword => {
+    if(event.target.value.length > 2) {
+      app.search.getSearchResults(event.target.value, app.searchView.index);
+    }
   };
 
-  module.stockController = stockController;
+  module.searchController = searchController;
 })(app);
