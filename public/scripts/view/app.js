@@ -25,3 +25,29 @@ $(document).ready(function(){
 
 
 // Hide section "Favourite Stocks" and show section "Stock Search Result"
+
+
+
+
+// Event Listener for "Add to Favorites" button, so when user click on it, the selected stock will show on the table on front page.
+
+var favorites = [];
+
+function SaveDataToLocalStorage(event) {
+  event.preventDefault();
+  if(localStorage.getItem('favorites')) {
+    favorites = JSON.parse(localStorage.getItem('favorites'));
+  }
+  favorites.push(app.stockController.ticker);
+  localStorage.setItem('favorites', JSON.stringify(favorites));
+  renderFavorites(favorites);
+}
+
+$('#add-fav').on('click', SaveDataToLocalStorage);
+
+
+// "Remove" button for removing the favorites.
+$('#').on('click',function(event){
+
+  localStorage.removeItem('');
+});
