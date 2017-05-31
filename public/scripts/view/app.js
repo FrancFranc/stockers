@@ -53,3 +53,23 @@ $('#show-about').on('click',function(event){
 });
 
 // "Remove" button for removing the favorites.
+
+
+// "Insert Comments" textbox.   When user types in his comment about this particular stock, this comment will show in the div above (#show-comments).
+
+function addComment(event) {
+  event.preventDefault();
+  var comment = document.getElementById('comment-textarea').value
+  localStorage.setItem('comment', comment);
+  renderComment();
+}
+
+$('#add-comment').on('click', addComment);
+
+
+// Button to remove the user's comment.
+
+$('#remove-comment').on('click',function(event){
+
+  localStorage.removeItem('');
+});
