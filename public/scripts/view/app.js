@@ -5,7 +5,7 @@ var app = app || {};
 //Event Listener for "Search" button on homepage
 
 $(document).ready(function(){
-  $('#result #about-us').hide();
+  $('#result, #about-us, #Fav-button2').hide();
 
   $('#company').on('input', app.searchController.index);
   $('#graph-start-date').on('change', app.graph.changeStartDate);
@@ -13,14 +13,15 @@ $(document).ready(function(){
   $('#submit-search').on('click',function(event){
     event.preventDefault();
     page.show('/stockData');
-    $('#favorites').hide(1000);
+    $('#favorites, #about-us').hide(1000);
     $('#result').show(1000);
   });
 });
 
 
 // Handlebars for the data shown in table
-
+var source   = $("#table-template").html();
+var template = Handlebars.compile(source);
 
 
 
@@ -45,9 +46,10 @@ function SaveDataToLocalStorage(event) {
 
 $('#add-fav').on('click', SaveDataToLocalStorage);
 
+$('#show-about').on('click',function(event){
+  event.preventDefault();
+  $('#result, #favorites').hide(1000);
+  $('#about-us, #Fav-button2').show(1000);
+});
 
 // "Remove" button for removing the favorites.
-$('#').on('click',function(event){
-
-  localStorage.removeItem('');
-});
