@@ -8,10 +8,10 @@
   <meta property="og:url" content="" />
   <meta property="og:image" content="" />
   <meta property="og:description" content="STOCK your protfolio! Track it and Manage it!" />
-  <link rel="stylesheet" type="text/css" href="styles/base.css"/>
-  <link rel="stylesheet" type="text/css" href="styles/layout.css"/>
-  <link rel="stylesheet" type="text/css" href="styles/module.css"/>
-  <link rel="stylesheet" type="text/css" href="styles/reset.css"/>
+  <link rel="stylesheet" type="text/css" href="/styles/reset.css"/>
+  <link rel="stylesheet" type="text/css" href="/styles/base.css"/>
+  <link rel="stylesheet" type="text/css" href="/styles/layout.css"/>
+  <link rel="stylesheet" type="text/css" href="/styles/module.css"/>
 
   <script id="table-template" type="text/x-handlebars-template">
     <table>
@@ -37,6 +37,16 @@
       </tbody>
     </table>
   </script>
+
+  <script id="news-template" type="text/x-handlebars-template">
+      <!-- <h1>{{stockName}} In the News</h1> this tag is up for debate... we can't finish until we know how the data is coming back from the news api. ALSO the issue with this tag as well is, assuming we are rendering multiple articles, we aren't rendering the name of the stock inside in the template... separate template for the stock name? something to discuss -->
+    <article>
+      <p>{{articledate}}</p>
+      <p>{{articleinfo}}</p>
+    </article>
+  </script>
+
+
 </head>
 
 <body>
@@ -44,7 +54,7 @@
   <main>
     <section id="homepage">
       <div>
-        <img class='Logo' src="img/heisberg-Logo.png">
+        <img class='Logo' src="img/Heisberg-Logo.png">
         <h1> STOCKERS </h1>
       </div>
       <div id="search-container">
@@ -75,15 +85,46 @@
           <input type="submit" value="Favorite Stocks" id="submit" /></form>
       </div>
       <div class="left-side">
-        <div class="graph"> </div>
-        <form>
-          <input type="submit" value="Add To Favorite" id="add-fav" />
+        <div class="graph">
+          <canvas id="stock-graph"></canvas>
+          <label>Start Date: <input type="date" id="graph-start-date" value="2017-01-03"></label>
+        </div>
+        <form id="add-fav">
+          <input type="submit" value="Add To Favorite" id="submit" />
           <input type="text" placeholder="My Comment" id="comments" />
         </form>
+      </div>
+      <div id="news-article">
       </div>
     </section>
 
     <section id="about-us">
+      <h1 class="about-title"> About Stockers Team </h1>
+
+      <div class="about-each">
+        <img class="about-img" src="img/adan.png">
+        </img>
+        <h1>Adan Rabadan</h1>
+        <p>Description...</p>
+      </div>
+      <div class="about-each">
+        <img class="about-img" src="img/evette.png">
+        </img>
+        <h1>Evette Cheung</h1>
+        <p>Description...</p>
+      </div>
+      <div class="about-each">
+        <img class="about-img" src="img/spencer.png">
+        </img>
+        <h1>Spencer Gietzen</h1>
+        <p>Description...</p>
+      </div>
+      <div class="about-each">
+        <img class="about-img" src="img/michael.png">
+        </img>
+        <h1>Michael Axelson</h1>
+        <p>Description...</p>
+      </div>
     </section>
 
   </main>
@@ -94,10 +135,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/page.js/1.7.1/page.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
   <script src="/scripts/model/stock.js"></script>
+  <script src="/scripts/model/graph.js"></script>
   <script src="/scripts/view/stockView.js"></script>
   <script src="/scripts/controller/stockController.js"></script>
   <script src="/scripts/controller/indexController.js"></script>
-  <script src="scripts/view/app.js"></script>
+  <script src="/scripts/view/app.js"></script>
   <script src="/scripts/controller/routes.js"></script>
 
 </body>

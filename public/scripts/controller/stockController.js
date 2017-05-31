@@ -6,7 +6,7 @@ var app = app || {};
   const stockController = {};
 
   stockController.index = () => {
-    app.stock.getStockInfo('FB', '20160925', '20161120', app.stockView.index);
+    app.stock.getStockInfo('FB', '', app.stockView.index);
   };
 
 

@@ -11,12 +11,9 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('./public'));
 
 function proxyBarChart(request, response) {
-  console.log(request.query);
-  console.log('Routing api call - Bar Chart');
-  // console.log(request.params[0]);
-
+  console.log(`Routing api call to BarChart for ${JSON.stringify(request.query)}`);
   (requestProxy({
-    url: `http://marketdata.websol.barchart.com/getHistory.json`,
+    url: 'http://marketdata.websol.barchart.com/getHistory.json',
     query: Object.assign({ key: process.env.BARCHART_TOKEN }, request.query)
   }))(request, response);
 }

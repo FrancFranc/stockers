@@ -1,0 +1,28 @@
+.graph {
+  position: relative;
+  margin: auto;
+  height: 100%;
+  width: 100%;
+}
+/*canvas {
+  max-width:80%;
+  max-height:80%;
+}*/
+
+
+/*styling for the about page*/
+
+.about-title {
+  text-align:center;
+  margin-bottom: 10%;
+  font-size: 3em;
+}
+
+
+.about-each {
+  /*min-width: 20%;*/
+  max-width: 20%;
+  margin: auto 2%;
+  display: inline-block;
+  text-align: center;
+}

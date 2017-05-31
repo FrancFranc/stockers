@@ -1,5 +1,3 @@
-// https://www.quandl.com/api/v3/datasets/WIKI/fb.json?start_date=" . $fromDate . "&end_date=" . $toDate . "&api_key=" . urlencode($_SESSION['QuandlAPIKey']);
-
 'use strict';
 
 var app = app || {};
@@ -9,18 +7,19 @@ var app = app || {};
 
   stock.stockData = [];
 
-  stock.getStockInfo = (companyTicker, startDate, endDate, callback) => {
+  stock.getStockInfo = (companyTicker, startDate, callback) => {
+    if(!startDate) {
+      startDate = '20170101';
+    }
     let params = {
       symbol: companyTicker,
       startDate: startDate,
-      endDate: endDate,
-      type: 'minutes',
-      interval: '60',
-      volume: 'total',
+      type: 'daily',
+      interval: '1',
       exchange: 'NYSE,AMEX,NASDAQ',
     };
 
-    $.ajax({ url: `/barChart`, data: params, method: 'GET' })
+    $.ajax({ url: '/barChart', data: params, method: 'GET' })
       .then(data => stock.stockData = data)
       .then(callback);
   };
