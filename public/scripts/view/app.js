@@ -1,14 +1,20 @@
 'use strict';
 
+var app = app || {};
+
 //Event Listener for "Search" button on homepage
 
 $(document).ready(function(){
-  $('#result').hide()
-});
-$('#submit-search').on('click',function(event){
-  event.preventDefault();
-  $('#favorites').hide(1000);
-  $('#result').show(1000);
+  $('#result #about-us').hide();
+
+  $('#graph-start-date').on('change', app.graph.changeStartDate);
+
+  $('#submit-search').on('click',function(event){
+    event.preventDefault();
+    window.location = 'stockData';
+    $('#favorites').hide(1000);
+    $('#result').show(1000);
+  });
 });
 
 
