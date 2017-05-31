@@ -36,12 +36,15 @@ var app = app || {};
       data: {
         labels: graph.labels,
         datasets: [{
+          label: 'Last Price ($)',
           data: graph.closePrice,
+          pointBackgroundColor: 'black',
+          fill: 'Disabled'
         }],
       },
       options: {
         responsive: true,
-        maintainAspectRatio: true,
+        maintainAspectRatio: true
       }
       // options:options,
     });
