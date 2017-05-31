@@ -4,7 +4,7 @@
 
 function getNews() {
   let params = {
-    key: '46e69aa3fe86b4dcb5545d76148ce18f',
+    key: '',
     sources: 'AP,IF',
     symbols: 'AMZN'
   };
@@ -15,7 +15,7 @@ function getNews() {
 
 function searchCompany() {
   let params = {
-    apikey: '46e69aa3fe86b4dcb5545d76148ce18f',
+    apikey: '',
     keyword: 'face'
   };
 

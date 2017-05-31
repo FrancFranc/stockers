@@ -9,7 +9,5 @@ var app = app || {};
     app.stock.getStockInfo('FB', '', app.stockView.index);
   };
 
-
-
   module.stockController = stockController;
 })(app);

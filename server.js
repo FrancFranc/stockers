@@ -22,7 +22,7 @@ function proxyNews(request, response) {
   console.log(`Routing api call to BarChart news for ${JSON.stringify(request.query)}`);
   (requestProxy({
     url: 'http://marketdata.websol.barchart.com/getNews.json',
-    query: request.query
+    query: Object.assign({ key: process.env.BARCHART_TOKEN }, request.query)
   }))(request, response);
 }
 
@@ -30,7 +30,7 @@ function proxySearch(request, response) {
   console.log(`Routing api call to BarChart news for ${JSON.stringify(request.query)}`);
   (requestProxy({
     url: 'http://ondemand.websol.barchart.com/getSymbolLookUp.json',
-    query: request.query
+    query: Object.assign({ key: process.env.BARCHART_TOKEN }, request.query)
   }))(request, response);
 }
 
