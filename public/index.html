@@ -53,19 +53,23 @@
 
   <main>
     <section id="homepage">
+
       <div>
         <img class='Logo' src="img/Heisberg-Logo.png">
         <h1> STOCKERS </h1>
       </div>
+
       <div id="search-container">
         <form>
           <input type="text" placeholder="Company Name" id="company" />
           <input type="submit" value="Search" id="submit-search" />
         </form>
       </div>
+
     </section>
 
     <section id="favorites">
+
       <table id="sample-table">
         <thead>
           <tr>
@@ -77,37 +81,47 @@
           </tr>
         </thead>
       </table>
+      
     </section>
 
     <section id="result">
+
       <div class="back-fav">
         <form>
           <input type="submit" value="Favorite Stocks" id="submit" /></form>
       </div>
+
       <div id="news-article"> </div>
+
       <div class="middle-column">
+
         <div class="graph">
           <canvas id="stock-graph"></canvas>
           <label>Start Date: <input type="date" id="graph-start-date" value="2017-01-03"></label>
         </div>
+
         <form id="add-fav">
           <input type="submit" value="Add To Favorite" id="submit" />
-          <input type="text" placeholder="My Comment" id="comments" />
         </form>
+
         <div class="show-comment">
-          <p></p>
+          <p id="comment-added"></p>
           <form>
             <input id="remove-comment" type="submit" value="Remove"> </input>
           </form>
         </div>
+
         <form class="insert-comment">
-          <textarea id="comment" name="comments" col="30" rows="6"> Insert My Comment </textarea>
+          <textarea id="comment-textarea" name="comments" col="30" rows="6"> </textarea>
           <input id="add-comment"type="submit" value="Add"> </input>
         </form>
+
       </div>
+
     </section>
 
     <section id="about-us">
+
       <h1 class="about-title"> About Stockers Team </h1>
 
       <div class="about-each">
@@ -116,24 +130,28 @@
         <h1>Adan Rabadan</h1>
         <p>Description...</p>
       </div>
+
       <div class="about-each">
         <img class="about-img" src="img/evette.png">
         </img>
         <h1>Evette Cheung</h1>
         <p>Description...</p>
       </div>
+
       <div class="about-each">
         <img class="about-img" src="img/spencer.png">
         </img>
         <h1>Spencer Gietzen</h1>
         <p>Description...</p>
       </div>
+
       <div class="about-each">
         <img class="about-img" src="img/michael.png">
         </img>
         <h1>Michael Axelson</h1>
         <p>Description...</p>
       </div>
+
     </section>
 
   </main>
