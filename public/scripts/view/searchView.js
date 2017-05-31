@@ -6,18 +6,22 @@ var app = app || {};
   const searchView = {};
 
   searchView.index = () => {
-    console.log(app.search.searchResults);
+    let results = app.search.searchResults.results;
     $('#searchResults').html('');
-    let x = $('#company').offset().left;
-    let y = $('#company').offset().top;
-    $('#searchResults').css('display', 'inline-block').css('left', x).css('top', y + $('#company').height());
-    app.search.searchResults.results.forEach(result => {
-      $('#searchResults').append(`<p>${result.name} (${result.symbol})</p>`);
-    });
+    if(results) {
+      let x = $('#company').offset().left;
+      let y = $('#company').offset().top;
+      $('#searchResults').css('display', 'inline-block').css('left', x).css('top', y + $('#company').height());
+      results.forEach(result => {
+        $('#searchResults').append(`<p>${result.name} (${result.symbol})</p>`);
+      });
+    }
   };
 
   searchView.selectCompany = (event) => {
-    $('#company').val(event.target.textContent);
+    let ticker = event.target.textContent.split('(')[1].split(')')[0];
+    $('#company').val(ticker);
+    $('#searchResults').css('display', 'none');
   };
 
   module.searchView = searchView;

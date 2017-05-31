@@ -38,10 +38,9 @@ var app = app || {};
     });
   };
 
-  graph.changeStartDate = (event) => {
-    let startDate = event.target.value.split('-').join('');
+  graph.changeStartDate = () => {
     $('#stock-graph').replaceWith('<canvas id="stock-graph"></canvas>');
-    app.stock.getStockInfo('FB', startDate, app.stockView.index);
+    app.stock.getStockInfo(app.stock.ticker, $('#graph-start-date').val(), app.stockView.index);
   };
 
   module.graph = graph;
