@@ -53,13 +53,12 @@ $('#add-fav').on('click', SaveDataToLocalStorage);
 
 function addComment(event) {
   event.preventDefault();
-  var comment = document.getElementById('comment').value
+  var comment = document.getElementById('comment-textarea').value
   localStorage.setItem('comment', comment);
-  renderComment(favorites);
+  renderComment();
 }
 
 $('#add-comment').on('click', addComment);
-
 
 
 // Button to remove the user's comment.
