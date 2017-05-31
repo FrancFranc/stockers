@@ -8,6 +8,8 @@ var app = app || {};
   searchController.index = keyword => {
     if(event.target.value.length > 2) {
       app.search.getSearchResults(event.target.value, app.searchView.index);
+    } else {
+      $('#searchResults').css('display', 'none');
     }
   };
 

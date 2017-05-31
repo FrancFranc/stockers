@@ -12,7 +12,7 @@ var app = app || {};
     let y = $('#search').offset().top;
     $('#searchResults').css('display', 'inline-block').css('left', x).css('top', y + $('#search').height());
     app.search.searchResults.results.forEach(result => {
-      $('#searchResults').append(`${result.name} (${result.symbol})<br />`);
+      $('#searchResults').append(`<p>${result.name} (${result.symbol})</p>`);
     });
   };
 
