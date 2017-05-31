@@ -1,11 +1,3 @@
 img.Logo {
   width: 10%;
 }
-
-#searchResults {
-  display: none;
-  width: auto;
-  position: absolute;
-  background-color: white;
-  z-index: 10;
-}

@@ -5,7 +5,7 @@ var app = app || {};
 //Event Listener for "Search" button on homepage
 
 $(document).ready(function(){
-  $('#result #about-us').hide();
+  $('#result, #about-us').hide();
 
   $('#company').on('input', app.searchController.index);
   $('#graph-start-date').val('2017-01-01');
