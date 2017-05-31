@@ -84,7 +84,8 @@
         <form>
           <input type="submit" value="Favorite Stocks" id="submit" /></form>
       </div>
-      <div class="left-side">
+      <div id="news-article"> </div>
+      <div class="middle-column">
         <div class="graph">
           <canvas id="stock-graph"></canvas>
           <label>Start Date: <input type="date" id="graph-start-date" value="2017-01-03"></label>
@@ -93,8 +94,16 @@
           <input type="submit" value="Add To Favorite" id="submit" />
           <input type="text" placeholder="My Comment" id="comments" />
         </form>
-      </div>
-      <div id="news-article">
+        <div class="show-comment">
+          <p></p>
+          <form>
+            <input id="remove-comment" type="submit" value="Remove"> </input>
+          </form>
+        </div>
+        <form class="insert-comment">
+          <textarea id="comment" name="comments" col="30" rows="6"> Insert My Comment </textarea>
+          <input id="add-comment"type="submit" value="Add"> </input>
+        </form>
       </div>
     </section>
 

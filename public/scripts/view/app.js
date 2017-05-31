@@ -50,3 +50,24 @@ $('#').on('click',function(event){
 
   localStorage.removeItem('');
 });
+
+
+// "Insert Comments" textbox.   When user types in his comment about this particular stock, this comment will show in the div above (#show-comments).
+
+function addComment(event) {
+  event.preventDefault();
+  var comment = document.getElementById('comment').value
+  localStorage.setItem('comment', comment);
+  renderComment(favorites);
+}
+
+$('#add-comment').on('click', addComment);
+
+
+
+// Button to remove the user's comment.
+
+$('#remove-comment').on('click',function(event){
+
+  localStorage.removeItem('');
+});
