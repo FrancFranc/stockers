@@ -39,10 +39,13 @@
   </script>
 
   <script id="news-template" type="text/x-handlebars-template">
-      <!-- <h1>{{stockName}} In the News</h1> this tag is up for debate... we can't finish until we know how the data is coming back from the news api. ALSO the issue with this tag as well is, assuming we are rendering multiple articles, we aren't rendering the name of the stock inside in the template... separate template for the stock name? something to discuss -->
     <article>
-      <p>{{articledate}}</p>
-      <p>{{articleinfo}}</p>
+      <h1>{{headline}}</h1>
+      <h3>Source: {{source}}</h3>
+      <p>Article Date: {{timestamp}}</p>
+      <p>Categories: {{categories}}</p>
+      <p>SubCatories: {{subCategories}}</p>
+      <p>{{fullText}}</p>
     </article>
   </script>
 
@@ -95,7 +98,7 @@
           <input type="text" placeholder="My Comment" id="comments" />
         </form>
       </div>
-      <div id="news-article">
+      <div id="news">
       </div>
     </section>
 

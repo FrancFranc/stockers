@@ -7,13 +7,13 @@ var app = app || {};
 
   newsView.index = () => {
     console.log(app.news.newsResults);
-    let $news = $('#news-article').html('');
+    let $news = $('#news');
+    $news.html('');
     let template = Handlebars.compile($('#news-template').text());
-    app.news.newsResults.forEach(stat => {
-      $news.append(template(stat)));
-      $('#newsResults').append(`<p>${result.name} (${result.symbol})</p>`);
-    });
-  };
+    app.news.newsResults.forEach(article => {
+      $news.append(template(article));
+    }
+  );
 
   module.newsView = newsView;
 })(app);

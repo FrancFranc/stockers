@@ -7,9 +7,12 @@ var app = app || {};
 
   news.newsResults = [];
 
-  news.timeParser = (date) => {
-    
+  news.timeParser = (newsArticle) => {
+    let dateNumbers = newsArticle.substring(0, newsArticle.indexOf('T'));
+    let date = dateNumbers.split('-');
+    return date[1]+'/'+date[2]+'/'+date[0];
   };
+
 
   news.getNewsResults = (keyword, callback) => {
     let params = {

@@ -3,14 +3,17 @@
 var app = app || {};
 
 (function(module) {
-  const searchController = {};
+  const newsController = {};
 
-  searchController.index = keyword => {
-    if(event.target.value.length > 2) {
-      app.search.getSearchResults(event.target.value, app.searchView.index);
-    } else {
-      $('#searchResults').css('display', 'none');
-    }
+  newsController.index => {
+    app.news.getNewsResults(keyword, callback);
+    
+
+    // if(event.target.value.length > 2) {
+    //   app.news.getSearchResults(event.target.value, app.newsView.index);
+    // } else {
+    //   $('#newsResults').css('display', 'none');
+    // }
   };
 
   module.searchController = searchController;
