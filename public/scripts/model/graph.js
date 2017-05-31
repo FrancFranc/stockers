@@ -9,6 +9,7 @@ var app = app || {};
   graph.labels = [];
 
   graph.createGraph = () => {
+    $('#stock-graph').replaceWith('<canvas id="stock-graph"></canvas>'); // this will replace the current graph with the new one coming in
     let ctx = $('#stock-graph')[0].getContext('2d');
     graph.closePrice = []; // reset data arrays when changing date
     graph.labels = [];
@@ -17,9 +18,17 @@ var app = app || {};
       graph.closePrice.push(dataPoint.close);
     });
 
+    let min = graph.closePrice.reduce((cur, next) => {
+      return Math.min(cur, next);
+    });
+    let max = graph.closePrice.reduce((cur, next) => {
+      return Math.max(cur, next);
+    });
+
     Chart.scaleService.updateScaleDefaults('linear', {
-      ticks: {
-        min: 0
+      ticks: { // graph range will be 10% below min to 10% above max
+        min: Math.ceil((min - (min * 0.1)) / 10) * 10, // these 2 get rounded to the nearest 10
+        max: Math.ceil((max + (max * 0.1)) / 10) * 10
       }
     });
     new Chart(ctx, {
@@ -27,21 +36,22 @@ var app = app || {};
       data: {
         labels: graph.labels,
         datasets: [{
+          label: 'Last Price ($)',
           data: graph.closePrice,
+          pointBackgroundColor: 'black',
+          fill: 'Disabled'
         }],
       },
       options: {
-        responsive: false,
-        maintainAspectRatio: true,
+        responsive: true,
+        maintainAspectRatio: true
       }
       // options:options,
     });
   };
 
-  graph.changeStartDate = (event) => {
-    let startDate = event.target.value.split('-').join('');
-    $('#stock-graph').replaceWith('<canvas id="stock-graph"></canvas>');
-    app.stock.getStockInfo('FB', startDate, app.stockView.index);
+  graph.changeStartDate = () => {
+    app.stock.getStockInfo(app.stock.ticker, $('#graph-start-date').val(), app.stockView.index);
   };
 
   module.graph = graph;
