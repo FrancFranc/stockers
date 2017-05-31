@@ -11,9 +11,9 @@ var app = app || {};
     if(results) {
       let x = $('#company').offset().left;
       let y = $('#company').offset().top;
-      $('#searchResults').css('display', 'inline-block').css('left', x).css('top', y + $('#company').height());
+      $('#searchResults').css('display', 'inline-block').css('left', x).css('top', y + $('#company').height()).append('<hr />');
       results.forEach(result => {
-        $('#searchResults').append(`<p>${result.name} (${result.symbol})</p>`);
+        $('#searchResults').append(`<p>${result.name} (${result.symbol})</p><hr />`);
       });
     }
   };
