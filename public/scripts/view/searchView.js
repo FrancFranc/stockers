@@ -6,6 +6,7 @@ var app = app || {};
   const searchView = {};
 
   searchView.index = () => {
+
     let results = app.search.searchResults.results;
     $('#searchResults').html('');
     if(results) {
@@ -22,6 +23,7 @@ var app = app || {};
     let ticker = event.target.textContent.split('(')[1].split(')')[0];
     $('#company').val(ticker);
     $('#searchResults').css('display', 'none');
+
   };
 
   module.searchView = searchView;

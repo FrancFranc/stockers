@@ -5,19 +5,22 @@ var app = app || {};
 //Event Listener for "Search" button on homepage
 
 $(document).ready(function(){
-  $('#result, #about-us').hide();
 
+  $('#result, #about-us, #Fav-button2').hide();
   $('#company').on('input', app.searchController.index);
   $('#graph-start-date').val('2017-01-01');
+
   $('#graph-start-date').on('change', app.graph.changeStartDate);
   $('#searchResults').on('click', 'p', app.searchView.selectCompany);
+
 
   $('#submit-search').on('click', app.stockController.index);
 });
 
 
 // Handlebars for the data shown in table
-
+var source   = $("#table-template").html();
+var template = Handlebars.compile(source);
 
 
 
@@ -42,12 +45,14 @@ function SaveDataToLocalStorage(event) {
 
 $('#add-fav').on('click', SaveDataToLocalStorage);
 
+$('#show-about').on('click',function(event){
+  event.preventDefault();
+  $('#result, #favorites').hide(1000);
+  $('#about-us, #Fav-button2').show(1000);
+});
 
 // "Remove" button for removing the favorites.
-// $('#').on('click',function(event){
-//
-//   localStorage.removeItem('');
-// });
+
 
 // "Insert Comments" textbox.   When user types in his comment about this particular stock, this comment will show in the div above (#show-comments).
 

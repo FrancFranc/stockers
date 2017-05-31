@@ -15,16 +15,7 @@
 
   <script id="table-template" type="text/x-handlebars-template">
     <table>
-      <thead>
-        <th>Ticker</th>
-        <th>Name</th>
-        <th>Currency</th>
-        <th>Last Price</th>
-        <th>Change</th>
-        <th>Remove</th>
-      </thead>
       <tbody>
-        {{#users}}
         <tr>
           <td>{{Ticker}}</td>
           <td>{{Name}}</td>
@@ -33,7 +24,6 @@
           <td>{{Change}}</td>
           <td>{{Remove}}</td>
         </tr>
-        {{/users}}
       </tbody>
     </table>
   </script>
@@ -89,7 +79,7 @@
 
       <div class="back-fav">
         <form>
-          <input type="submit" value="Favorite Stocks" id="submit" /></form>
+          <input type="submit" value="Favorite Stocks" id="Fav-button" /></form>
       </div>
 
       <div id="news-article"> </div>
@@ -156,7 +146,16 @@
     </section>
 
   </main>
-  <footer> </footer>
+  <footer>
+    <p>Stockers&copy;</p>
+    <div class="back-fav">
+      <form>
+        <input type="submit" value="Favorite Stocks" id="Fav-button2" /></form>
+    </div>
+    <form class="About-page"/>
+      <input type="submit" value="About Us!" id="show-about"/>
+    </form>
+  </footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
