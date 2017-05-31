@@ -21,6 +21,7 @@
         <th>Currency</th>
         <th>Last Price</th>
         <th>Change</th>
+        <th>Remove</th>
       </thead>
       <tbody>
         {{#users}}
@@ -30,6 +31,7 @@
           <td>{{Currency}}</td>
           <td>{{Last Price}}</td>
           <td>{{Change}}</td>
+          <td>{{Remove}}</td>
         </tr>
         {{/users}}
       </tbody>
@@ -46,7 +48,7 @@
         <h1> STOCKERS </h1>
       </div>
       <div id="search-container">
-        <form id="search">
+        <form>
           <input type="text" placeholder="Company Name" id="company" />
           <input type="submit" value="Search" id="submit-search" />
         </form>
@@ -69,15 +71,15 @@
 
     <section id="result">
       <div class="back-fav">
-        <form id="">
+        <form>
           <input type="submit" value="Favorite Stocks" id="submit" /></form>
       </div>
       <div class="left-side">
         <div class="graph"> </div>
-        <form id="add-fav">
-          <input type="submit" value="Add To Favorite" id="submit" /></form>
-        <form id="comments">
-          <input type="text" placeholder="My Comment" id="comments" /></form>
+        <form>
+          <input type="submit" value="Add To Favorite" id="add-fav" />
+          <input type="text" placeholder="My Comment" id="comments" />
+        </form>
       </div>
     </section>
 
