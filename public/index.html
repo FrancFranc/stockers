@@ -35,6 +35,16 @@
       </tbody>
     </table>
   </script>
+
+  <script id="news-template" type="text/x-handlebars-template">
+      <!-- <h1>{{stockName}} In the News</h1> this tag is up for debate... we can't finish until we know how the data is coming back from the news api. ALSO the issue with this tag as well is, assuming we are rendering multiple articles, we aren't rendering the name of the stock inside in the template... separate template for the stock name? something to discuss -->
+    <article>
+      <p>{{articledate}}</p>
+      <p>{{articleinfo}}</p>
+    </article>
+  </script>
+
+
 </head>
 
 <body>
@@ -82,11 +92,14 @@
         <form id="comments">
           <input type="text" placeholder="My Comment" id="comments" /></form>
       </div>
+      <div id="news-article">
+
+      </div>
     </section>
 
     <section id="about-us">
       <h1 class="about-title"> About Stockers Team </h1>
-      
+
       <div class="about-each">
         <img class="about-img" src="img/adan.png">
         </img>
