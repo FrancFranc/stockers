@@ -19,7 +19,7 @@ $(document).ready(function(){
 
 
 // Handlebars for the data shown in table
-var source   = $("#table-template").html();
+var source   = $('#table-template').html();
 var template = Handlebars.compile(source);
 
 
@@ -33,21 +33,21 @@ var template = Handlebars.compile(source);
 
 var favorites = [];
 
-function SaveDataToLocalStorage(event) {
+function saveDataToLocalStorage(event) {
   event.preventDefault();
   if(localStorage.getItem('favorites')) {
     favorites = JSON.parse(localStorage.getItem('favorites'));
   }
-  favorites.push(app.stockController.ticker);
+  favorites.push(app.stock.ticker);
   localStorage.setItem('favorites', JSON.stringify(favorites));
   renderFavorites(favorites);
 }
 
-$('#add-fav').on('click', SaveDataToLocalStorage);
+$('#add-fav').on('click', saveDataToLocalStorage);
 
 $('#show-about').on('click',function(event){
   event.preventDefault();
-  $('#result, #favorites').hide(1000);
+  $('#result, #favorites, #show-about').hide(1000);
   $('#about-us, #Fav-button2').show(1000);
 });
 
@@ -58,7 +58,7 @@ $('#show-about').on('click',function(event){
 
 function addComment(event) {
   event.preventDefault();
-  var comment = document.getElementById('comment-textarea').value
+  let comment = document.getElementById('comment-textarea').value;
   localStorage.setItem('comment', comment);
   renderComment();
 }
