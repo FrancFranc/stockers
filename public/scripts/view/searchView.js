@@ -14,7 +14,6 @@ var app = app || {};
     app.search.searchResults.results.forEach(result => {
       $('#searchResults').append(`${result.name} (${result.symbol})<br />`);
     });
-
   };
 
   module.searchView = searchView;
