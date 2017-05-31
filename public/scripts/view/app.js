@@ -5,17 +5,16 @@ var app = app || {};
 //Event Listener for "Search" button on homepage
 
 $(document).ready(function(){
+
   $('#result, #about-us, #Fav-button2').hide();
-
   $('#company').on('input', app.searchController.index);
-  $('#graph-start-date').on('change', app.graph.changeStartDate);
+  $('#graph-start-date').val('2017-01-01');
 
-  $('#submit-search').on('click',function(event){
-    event.preventDefault();
-    page.show('/stockData');
-    $('#favorites, #about-us').hide(1000);
-    $('#result').show(1000);
-  });
+  $('#graph-start-date').on('change', app.graph.changeStartDate);
+  $('#searchResults').on('click', 'p', app.searchView.selectCompany);
+
+
+  $('#submit-search').on('click', app.stockController.index);
 });
 
 

@@ -5,7 +5,7 @@ var app = app || {};
 (function(module) {
   const searchController = {};
 
-  searchController.index = keyword => {
+  searchController.index = (event) => {
     if(event.target.value.length > 2) {
       app.search.getSearchResults(event.target.value, app.searchView.index);
     } else {
