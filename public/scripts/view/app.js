@@ -9,6 +9,7 @@ $(document).ready(function(){
 
   $('#company').on('input', app.searchController.index);
   $('#graph-start-date').on('change', app.graph.changeStartDate);
+  $('#searchResults').on('click', 'p', app.searchView.selectCompany);
 
   $('#submit-search').on('click',function(event){
     event.preventDefault();
@@ -47,7 +48,7 @@ $('#add-fav').on('click', SaveDataToLocalStorage);
 
 
 // "Remove" button for removing the favorites.
-$('#').on('click',function(event){
-
-  localStorage.removeItem('');
-});
+// $('#').on('click',function(event){
+//
+//   localStorage.removeItem('');
+// });
