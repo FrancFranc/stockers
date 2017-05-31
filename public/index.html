@@ -8,10 +8,10 @@
   <meta property="og:url" content="" />
   <meta property="og:image" content="" />
   <meta property="og:description" content="STOCK your protfolio! Track it and Manage it!" />
-  <link rel="stylesheet" type="text/css" href="styles/reset.css"/>
-  <link rel="stylesheet" type="text/css" href="styles/base.css"/>
-  <link rel="stylesheet" type="text/css" href="styles/layout.css"/>
-  <link rel="stylesheet" type="text/css" href="styles/module.css"/>
+  <link rel="stylesheet" type="text/css" href="/styles/reset.css"/>
+  <link rel="stylesheet" type="text/css" href="/styles/base.css"/>
+  <link rel="stylesheet" type="text/css" href="/styles/layout.css"/>
+  <link rel="stylesheet" type="text/css" href="/styles/module.css"/>
 
   <script id="table-template" type="text/x-handlebars-template">
     <table>
@@ -42,7 +42,7 @@
   <main>
     <section id="homepage">
       <div>
-        <img class='Logo' src="img/heisberg-Logo.png">
+        <img class='Logo' src="img/Heisberg-Logo.png">
         <h1> STOCKERS </h1>
       </div>
       <div id="search-container">
@@ -75,7 +75,7 @@
       <div class="left-side">
         <div class="graph">
           <canvas id="stock-graph"></canvas>
-
+          <label>Start Date: <input type="date" id="graph-start-date" value="2017-01-03"></label>
         </div>
         <form id="add-fav">
           <input type="submit" value="Add To Favorite" id="submit" /></form>
@@ -95,11 +95,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/page.js/1.7.1/page.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
   <script src="/scripts/model/stock.js"></script>
-  <script src="scripts/model/graph.js"></script>
+  <script src="/scripts/model/graph.js"></script>
   <script src="/scripts/view/stockView.js"></script>
   <script src="/scripts/controller/stockController.js"></script>
   <script src="/scripts/controller/indexController.js"></script>
-  <script src="scripts/view/app.js"></script>
+  <script src="/scripts/view/app.js"></script>
   <script src="/scripts/controller/routes.js"></script>
 
 </body>
