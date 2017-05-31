@@ -11,7 +11,7 @@ $(document).ready(function(){
 
   $('#submit-search').on('click',function(event){
     event.preventDefault();
-    window.location = 'stockData';
+    page.show('/stockData');
     $('#favorites').hide(1000);
     $('#result').show(1000);
   });
