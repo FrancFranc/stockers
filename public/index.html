@@ -29,9 +29,13 @@
       <h1>{{headline}}</h1>
       <h3>Source: {{source}}</h3>
       <p>Article Date: {{timestamp}}</p>
+      {{#if categories}}
       <p>Categories: {{categories}}</p>
+      {{/if}}
+      {{#if categories}}
       <p>SubCatories: {{subCategories}}</p>
-      <p>{{fullText}}</p>
+      {{/if}}
+      <p>{{{fullText}}}</p>
     </article>
   </script>
 

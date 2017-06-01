@@ -10,7 +10,7 @@ var app = app || {};
     let $news = $('#news');
     $news.html('');
     let template = Handlebars.compile($('#news-template').text());
-    app.news.newsResults.forEach(article => {
+    app.news.newsResults.results.forEach(article => {
       $news.append(template(article));
     }
   );
