@@ -43,27 +43,40 @@ function SaveDataToLocalStorage(event) {
 $('#add-fav').on('click', SaveDataToLocalStorage);
 
 
-// "Remove" button for removing the favorites.
-// $('#').on('click',function(event){
-//
-//   localStorage.removeItem('');
-// });
+
+//"Remove" button for removing the favorites.
+
+
+
 
 // "Insert Comments" textbox.   When user types in his comment about this particular stock, this comment will show in the div above (#show-comments).
 
+var commentArray = [];
+var companyName = app.stockController.ticker;
+
 function addComment(event) {
   event.preventDefault();
-  var comment = document.getElementById('comment-textarea').value
-  localStorage.setItem('comment', comment);
-  renderComment();
+  var comment = $('#comment-textarea').val();
+  commentArray.push(comment);
+  localStorage.setItem('comment', JSON.stringify(commentArray));
+  $('#comment-textarea').empty();
+// renderComment();
 }
 
 $('#add-comment').on('click', addComment);
 
 
+
+// Render the comment that user input onto the <p> (#comment-added)
+
+var commentArray = [];
+
+
+
+
+
 // Button to remove the user's comment.
 
 $('#remove-comment').on('click',function(event){
-
   localStorage.removeItem('');
 });
