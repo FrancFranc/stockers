@@ -6,6 +6,7 @@ var app = app || {};
   const stockView = {};
 
   stockView.index = () => {
+    renderComment();
     app.graph.createGraph();
   };
 

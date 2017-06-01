@@ -15,6 +15,8 @@ $(document).ready(function(){
 
 
   $('#submit-search').on('click', app.stockController.index);
+
+  $('#insert-comment').on('submit', addComment);
 });
 
 
@@ -56,24 +58,41 @@ $('#show-about').on('click',function(event){
 //"Remove" button for removing the favorites.
 
 
+
+
+
 // "Insert Comments" textbox.   When user types in his comment about this particular stock, this comment will show in the div above (#show-comments).
 
-var commentArray = [];
-var companyName = app.stockController.ticker;
+var i;
 
 function addComment(event) {
   event.preventDefault();
-  var comment = $('#comment-textarea').val();
+  let commentArray = [];
+  let companyName = app.searchView.searchedCompanyInfo;
+  let comment = $('#comment-textarea').val();
   if (localStorage.getItem('comment')) {
     commentArray = JSON.parse(localStorage.getItem('comment'));
   }
-  commentArray.push(comment);
+  let commentObject = {
+    company: companyName,
+    comment: comment
+  };
+  commentArray.push(commentObject);
   localStorage.setItem('comment', JSON.stringify(commentArray));
   $('#comment-textarea').empty();
-// renderComment();
+  renderComment(commentArray);
+}
+
+function renderComment(commentArray) {
+  for (i=0; i<commentArray.length; i++) {
+    if (commentArray[i].company = companyName) {
+      $('#comment-added').append(commentArray[i].comment);
+    }
+ }}
 
 
-$('#add-comment').on('click', addComment);
+
+
 
 
 
@@ -86,7 +105,3 @@ var commentArray = [1,2,3];
 
 
 // Button to remove the user's comment.
-
-// $('#remove-comment').on('click',function(event){
-//   localStorage.removeItem('');
-// });
