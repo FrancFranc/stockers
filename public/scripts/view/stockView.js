@@ -7,6 +7,7 @@ var app = app || {};
 
   stockView.index = () => {
     renderComment();
+    $('#company-name').text(app.searchView.searchedCompanyInfo);
     app.graph.createGraph();
   };
 

@@ -6,15 +6,12 @@ var app = app || {};
   const newsView = {};
 
   newsView.index = () => {
-    console.log(app.news.newsResults);
     let $news = $('#news');
     $news.html('');
     let template = Handlebars.compile($('#news-template').text());
-    app.news.newsResults.forEach(article => {
+    app.news.newsResults.results.forEach(article => {
       $news.append(template(article));
-    }
-  );
-  console.log('inside newsView.index');
-  }
+    });
+  };
   module.newsView = newsView;
 })(app);

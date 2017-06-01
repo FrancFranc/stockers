@@ -6,13 +6,14 @@ var app = app || {};
 
 $(document).ready(function(){
 
-  $('#result, #about-us, #Fav-button2').hide();
+  $('#result, #about-us, #fav-button').hide();
   $('#company').on('input', app.searchController.index);
   $('#graph-start-date').val('2017-01-01');
 
   $('#graph-start-date').on('change', app.graph.changeStartDate);
   $('#searchResults').on('click', 'p', app.searchView.selectCompany);
 
+  $('#fav-button').on('click', app.indexController.index);
 
   $('#submit-search').on('click', app.stockController.index);
 
@@ -21,22 +22,16 @@ $(document).ready(function(){
 
 
 // Handlebars for the data shown in table
-var source   = $('#table-template').html();
-var template = Handlebars.compile(source);
-
-
-
-// Hide section "Favourite Stocks" and show section "Stock Search Result"
-
-
-
+let source   = $('#table-template').html();
+let template = Handlebars.compile(source);
 
 // Event Listener for "Add to Favorites" button, so when user click on it, the selected stock will show on the table on front page.
 
-var favorites = [];
+let favorites = [];
 
 function saveDataToLocalStorage(event) {
   event.preventDefault();
+  && localStorage.getItem('favorites').val
   if(localStorage.getItem('favorites')) {
     favorites = JSON.parse(localStorage.getItem('favorites'));
   }
@@ -50,9 +45,18 @@ $('#add-fav').on('click', saveDataToLocalStorage);
 $('#show-about').on('click',function(event){
   event.preventDefault();
   $('#result, #favorites, #show-about').hide(1000);
-  $('#about-us, #Fav-button2').show(1000);
+  $('#about-us, #fav-button').show(1000);
 });
 
+function renderFavorites(){
+  var parsedFavs= JSON.parse(localStorage['favorites']);
+  let template = Handlebars.compile($('#table-template').text());
+  parsedFavs.forEach(stock => {
+    $('stock-favorites').append(template(article));
+
+
+
+}
 
 
 //"Remove" button for removing the favorites.
@@ -63,12 +67,11 @@ $('#show-about').on('click',function(event){
 
 // "Insert Comments" textbox.   When user types in his comment about this particular stock, this comment will show in the div above (#show-comments).
 
-var i;
 
 function addComment(event) {
   event.preventDefault();
   let commentArray = [];
-  let companyName = app.searchView.searchedCompanyInfo;
+  let companyName = app.stockController.ticker;
   let comment = $('#comment-textarea').val();
   if (localStorage.getItem('comment')) {
     commentArray = JSON.parse(localStorage.getItem('comment'));
@@ -84,24 +87,17 @@ function addComment(event) {
 }
 
 function renderComment(commentArray) {
-  for (i=0; i<commentArray.length; i++) {
+  for (let i=0; i<commentArray.length; i++) {
     if (commentArray[i].company = companyName) {
       $('#comment-added').append(commentArray[i].comment);
     }
- }}
-
-
+  }
+}
 
 
 
 
 
 // Render the comment that user input onto the <p> (#comment-added)
-
-var commentArray = [1,2,3];
-
-
-
-
 
 // Button to remove the user's comment.
