@@ -87,17 +87,11 @@
     </section>
 
     <section id="back-to-fav">
-      <input type="submit" value="Favorite Stocks" id="fav-button" /></form>
+      <input type="submit" value="Favorite Stocks" id="fav-button" />
     </section>
 
     <section id="result">
       <h1 id="company-name"></h1>
-
-
-      <div id="news-article"> </div>
-
-      <div class="middle-column">
-
         <div class="graph">
           <canvas id="stock-graph"></canvas>
           <label>Start Date: <input type="date" id="graph-start-date" value="2017-01-03"></label>
@@ -110,17 +104,17 @@
         <div class="show-comment">
           <p id="comment-added">gggggggggggggggggg</p>
           <form>
-            <input id="remove-comment" type="submit" value="Remove"> </input>
+            <input id="remove-comment" type="submit" value="Remove">
           </form>
         </div>
 
         <form id="insert-comment">
           <textarea id="comment-textarea" name="comments" col="30" rows="6"> </textarea>
-          <input id="add-comment" type="submit" value="Add"> </input>
+          <input id="add-comment" type="submit" value="Add">
         </form>
 
+      <div id="news">
       </div>
-
     </section>
 
     <section id="about-us">
@@ -129,28 +123,24 @@
 
       <div class="about-each">
         <img class="about-img" src="img/adan.png">
-        </img>
         <h1>Adan Rabadan</h1>
         <p>Description...</p>
       </div>
 
       <div class="about-each">
         <img class="about-img" src="img/evette.png">
-        </img>
         <h1>Evette Cheung</h1>
         <p>Description...</p>
       </div>
 
       <div class="about-each">
         <img class="about-img" src="img/spencer.png">
-        </img>
         <h1>Spencer Gietzen</h1>
         <p>Description...</p>
       </div>
 
       <div class="about-each">
         <img class="about-img" src="img/michael.png">
-        </img>
         <h1>Michael Axelson</h1>
         <p>Description...</p>
       </div>
@@ -172,12 +162,15 @@
   <script src="/scripts/model/stock.js"></script>
   <script src="/scripts/model/graph.js"></script>
   <script src="/scripts/model/search.js"></script>
+  <script src="/scripts/model/news.js"></script>
   <script src="/scripts/view/stockView.js"></script>
   <script src="/scripts/view/searchView.js"></script>
+  <script src="/scripts/view/newsView.js"></script>
+  <script src="/scripts/controller/newsController.js"></script>
   <script src="/scripts/controller/stockController.js"></script>
-  <script src="/scripts/view/app.js"></script>
   <script src="/scripts/controller/indexController.js"></script>
   <script src="/scripts/controller/searchController.js"></script>
+
   <script src="/scripts/view/app.js"></script>
   <script src="/scripts/controller/routes.js"></script>
 
