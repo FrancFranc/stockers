@@ -9,6 +9,7 @@ var app = app || {};
     if(event.target) {
       event.preventDefault();
       page.show('/stockData');
+      $('#comment-added').html('');
       $('#favorites, #about-us, #fav-button').hide(1000);
       $('#result').show(1000);
       let ticker = event.target.form[0].value;
