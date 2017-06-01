@@ -1,8 +1,56 @@
-.graph {
-  position: relative;
-  margin: 0 auto;
+th {
+  border: blue solid 2px;
+}
+
+/*------------------------------------------------------------------
+               MAIN HEADER (including conpany logo and search bar)
+--------------------------------------------------------------------*/
+
+/*----- Stockers Logo & Name -----*/
+
+.stockers-head {
+  background-color: black;
+  color: white;
+}
+
+
+/*----- Search Company Name  and Submit Button -----*/
+
+
+#search-container {
+  padding: 5px;
+  background-color: white;
+  color: black;
+}
+
+#company {
   width: 50%;
 }
+
+#submit-search {
+  width: 50%;
+}
+
+
+
+
+
+
+
+
+/*------------------------------------------------------------------
+RESULT page (including NEWS, GRAPH, ADD TO FAV button, COMMENT area)
+--------------------------------------------------------------------*/
+
+/*----- whole section------*/
+
+#result {
+  overflow: auto;
+  padding-left: 10%;
+  padding-right: 10%;
+  max-height: 50%;
+}
+
 
 #searchResults {
   display: none;
@@ -23,39 +71,81 @@ hr {
   margin-top: 0.5%;
 }
 
-/*canvas {
-  max-width:80%;
-  max-height:80%;
-}*/
+/*----- Back To Fav button ------*/
+
+
+
+/*----- News ------*/
 
 #news {
-  width: 40%;
-  border: 1px solid black;
   overflow-y: scroll;
+  color:  black;
+  width: 50%;
+  max-height: 300px;  //it doesn't work if I change it to %. something wrong with the parent
 }
 
 #news * {
-  max-width: 100%;
+  max-width: 90%;
+}
+
+#news h3 {
+  text-align: center;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  padding
+}
+
+#news h1 {
+  text-align: center;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  padding
+}
+
+#news p {
+  text-align: justify;
+  padding-top: 1%;
+  padding-bottom: 1%;
 }
 
 
-/* SEARCH CONTAINER (including search COMPANY NAME and SEARCH button)*/
-#search-container {
-  padding: 5px;
+/*----- Right column ------*/
+
+.right-column {
+  width: 50%;
   background-color: white;
-  color: black;
 }
 
-#company {
+h1 {
+  padding-top: 3%;
+  padding-bottom: 3%;
+}
 
+canvas {
+  background-color: white;
+}
+
+.graph {
+  position: relative;
+  margin: 0 auto;
+  width: 50%;
+}
+
+#add-fav {
 
 }
 
-#submit-search {
+#show-comment {
 
 }
 
-/*styling for the ABOUT US page*/
+#insert-comment {
+
+}
+
+/*------------------------------------------------------------------
+                        ABOUT US page
+--------------------------------------------------------------------*/
 
 #about-us {
   max-width: 100%;
@@ -77,12 +167,13 @@ hr {
 }
 
 
-/* FOOTER (including ABOUT US button & STOCKERS COPYRIGHT) */
+/*------------------------------------------------------------------
+       FOOTER (including ABOUT US button & STOCKERS COPYRIGHT)
+--------------------------------------------------------------------*/
 
 footer {
 
   height: 10%;
-  margin-top: 90%;
   background-color: black;
   color: white;
 }
