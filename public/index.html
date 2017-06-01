@@ -14,17 +14,6 @@
   <link rel="stylesheet" type="text/css" href="/styles/module.css"/>
 
   <script id="table-template" type="text/x-handlebars-template">
-    <table>
-      <thead>
-        <th>Ticker</th>
-        <th>Name</th>
-        <th>Currency</th>
-        <th>Last Price</th>
-        <th>Change</th>
-        <th>Remove</th>
-      </thead>
-      <tbody>
-        {{#users}}
         <tr>
           <td>{{Ticker}}</td>
           <td>{{Name}}</td>
@@ -33,16 +22,16 @@
           <td>{{Change}}</td>
           <td>{{Remove}}</td>
         </tr>
-        {{/users}}
-      </tbody>
-    </table>
   </script>
 
   <script id="news-template" type="text/x-handlebars-template">
-      <!-- <h1>{{stockName}} In the News</h1> this tag is up for debate... we can't finish until we know how the data is coming back from the news api. ALSO the issue with this tag as well is, assuming we are rendering multiple articles, we aren't rendering the name of the stock inside in the template... separate template for the stock name? something to discuss -->
     <article>
-      <p>{{articledate}}</p>
-      <p>{{articleinfo}}</p>
+      <h1>{{headline}}</h1>
+      <h3>Source: {{source}}</h3>
+      <p>Article Date: {{timestamp}}</p>
+      <p>Categories: {{categories}}</p>
+      <p>SubCatories: {{subCategories}}</p>
+      <p>{{fullText}}</p>
     </article>
   </script>
 
@@ -82,14 +71,14 @@
           </tr>
         </thead>
       </table>
-      
+
     </section>
 
     <section id="result">
 
       <div class="back-fav">
         <form>
-          <input type="submit" value="Favorite Stocks" id="submit" /></form>
+          <input type="submit" value="Favorite Stocks" id="Fav-button" /></form>
       </div>
 
       <div id="news-article"> </div>
@@ -117,6 +106,9 @@
           <input id="add-comment"type="submit" value="Add"> </input>
         </form>
 
+      </div>
+
+      <div id="news">
       </div>
 
     </section>
@@ -156,7 +148,16 @@
     </section>
 
   </main>
-  <footer> </footer>
+  <footer>
+    <p>Stockers&copy;</p>
+    <div class="back-fav">
+      <form>
+        <input type="submit" value="Favorite Stocks" id="Fav-button2" /></form>
+    </div>
+    <form class="About-page"/>
+      <input type="submit" value="About Us!" id="show-about"/>
+    </form>
+  </footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -165,12 +166,14 @@
   <script src="/scripts/model/stock.js"></script>
   <script src="/scripts/model/graph.js"></script>
   <script src="/scripts/model/search.js"></script>
+  <script src="/scripts/model/news.js"></script>
   <script src="/scripts/view/stockView.js"></script>
   <script src="/scripts/view/searchView.js"></script>
+  <script src="/scripts/view/newsView.js"></script>
   <script src="/scripts/controller/stockController.js"></script>
   <script src="/scripts/controller/indexController.js"></script>
+  <script src="/scripts/controller/newsController.js"></script>
   <script src="/scripts/controller/searchController.js"></script>
-  <script src="/scripts/view/app.js"></script>
   <script src="/scripts/controller/routes.js"></script>
 
 </body>

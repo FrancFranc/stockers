@@ -5,19 +5,22 @@ var app = app || {};
 //Event Listener for "Search" button on homepage
 
 $(document).ready(function(){
-  $('#result, #about-us').hide();
 
+  $('#result, #about-us, #Fav-button2').hide();
   $('#company').on('input', app.searchController.index);
   $('#graph-start-date').val('2017-01-01');
+
   $('#graph-start-date').on('change', app.graph.changeStartDate);
   $('#searchResults').on('click', 'p', app.searchView.selectCompany);
+
 
   $('#submit-search').on('click', app.stockController.index);
 });
 
 
 // Handlebars for the data shown in table
-
+var source   = $('#table-template').html();
+var template = Handlebars.compile(source);
 
 
 
@@ -30,23 +33,27 @@ $(document).ready(function(){
 
 var favorites = [];
 
-function SaveDataToLocalStorage(event) {
+function saveDataToLocalStorage(event) {
   event.preventDefault();
   if(localStorage.getItem('favorites')) {
     favorites = JSON.parse(localStorage.getItem('favorites'));
   }
-  favorites.push(app.stockController.ticker);
+  favorites.push(app.stock.ticker);
   localStorage.setItem('favorites', JSON.stringify(favorites));
   renderFavorites(favorites);
 }
 
-$('#add-fav').on('click', SaveDataToLocalStorage);
+$('#add-fav').on('click', saveDataToLocalStorage);
+
+$('#show-about').on('click',function(event){
+  event.preventDefault();
+  $('#result, #favorites, #show-about').hide(1000);
+  $('#about-us, #Fav-button2').show(1000);
+});
 
 
 
 //"Remove" button for removing the favorites.
-
-
 
 
 // "Insert Comments" textbox.   When user types in his comment about this particular stock, this comment will show in the div above (#show-comments).
@@ -64,7 +71,7 @@ function addComment(event) {
   localStorage.setItem('comment', JSON.stringify(commentArray));
   $('#comment-textarea').empty();
 // renderComment();
-}
+
 
 $('#add-comment').on('click', addComment);
 
