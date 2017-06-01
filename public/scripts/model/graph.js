@@ -43,10 +43,9 @@ var app = app || {};
         }],
       },
       options: {
-        responsive: true,
+        responsive: false,
         maintainAspectRatio: true
       }
-      // options:options,
     });
   };
 

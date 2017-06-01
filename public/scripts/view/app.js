@@ -14,9 +14,13 @@ $(document).ready(function(){
   $('#searchResults').on('click', 'p', app.searchView.selectCompany);
 
   $('#fav-button').on('click', app.indexController.index);
-
+  $('#add-fav').on('click', saveDataToLocalStorage);
   $('#submit-search').on('click', app.stockController.index);
-
+  $('#show-about').on('click',function(event){
+    event.preventDefault();
+    $('#result, #favorites, #show-about').hide(1000);
+    $('#about-us, #fav-button').show(1000);
+  });
   $('#insert-comment').on('submit', addComment);
 });
 
@@ -40,19 +44,15 @@ function saveDataToLocalStorage(event) {
   renderFavorites(favorites);
 }
 
-$('#add-fav').on('click', saveDataToLocalStorage);
 
-$('#show-about').on('click',function(event){
-  event.preventDefault();
-  $('#result, #favorites, #show-about').hide(1000);
-  $('#about-us, #fav-button').show(1000);
-});
+
+
 
 function renderFavorites(){
   var parsedFavs= JSON.parse(localStorage['favorites']);
   let template = Handlebars.compile($('#table-template').text());
   parsedFavs.forEach(stock => {
-    $('stock-favorites').append(template(article));
+    $('stock-favorites').append(template(stock));
   });
 }
 
@@ -95,11 +95,3 @@ function renderComment() {
     }
   }
 }
-
-
-
-
-
-// Render the comment that user input onto the <p> (#comment-added)
-
-// Button to remove the user's comment.
