@@ -10,7 +10,11 @@ var app = app || {};
       event.preventDefault();
       page.show('/stockData');
       $('#comment-added').html('');
-      $('#favorites, #about-us, #fav-button').hide(1000);
+      if($('#favorites').css('display') === 'none') {
+        $('#about-us, #fav-button').hide(1000);
+      } else {
+        $('#favorites, #about-us, #fav-button').hide(1000);
+      }
       $('#result').show(1000);
       let ticker = event.target.form[0].value;
       app.stock.getStockInfo(ticker, $('#graph-start-date').val(), app.stockView.index);

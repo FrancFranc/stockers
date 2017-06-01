@@ -66,7 +66,7 @@ function renderComment() {
   }
   for (let i=0; i < commentArray.length; i++) {
     if (commentArray[i].company == app.stock.ticker) {
-      $('#comment-added').append(commentArray[i].comment);
+      $('#comment-added').append(`<p>${commentArray[i].comment}</p>`);
     }
   }
 }
