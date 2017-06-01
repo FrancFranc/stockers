@@ -15,7 +15,7 @@ $(document).ready(function(){
   $('#submit-search').on('click', app.stockController.index);
   $('#show-about').on('click',function(event){
     event.preventDefault();
-    $('#result, #favorites, #show-about').hide(1000);
+    $('#result, #favorites').hide(1000);
     $('#about-us, #fav-button').show(1000);
   });
   $('#insert-comment').on('submit', addComment);

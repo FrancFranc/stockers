@@ -5,3 +5,15 @@ th {
 
 
 /*Company Name Search and Submit Button*/
+
+
+#company {
+  width: 50%;
+}
+
+#submit-search {
+  float: right;
+  width: 50%;
+}
+
+/*RESULT page (including NEWS, GRAPH, ADD TO FAV button, COMMENT area)*/
