@@ -57,6 +57,9 @@ var companyName = app.stockController.ticker;
 function addComment(event) {
   event.preventDefault();
   var comment = $('#comment-textarea').val();
+  if (localStorage.getItem('comment')) {
+    commentArray = JSON.parse(localStorage.getItem('comment'));
+  }
   commentArray.push(comment);
   localStorage.setItem('comment', JSON.stringify(commentArray));
   $('#comment-textarea').empty();
@@ -77,6 +80,6 @@ var commentArray = [];
 
 // Button to remove the user's comment.
 
-$('#remove-comment').on('click',function(event){
-  localStorage.removeItem('');
-});
+// $('#remove-comment').on('click',function(event){
+//   localStorage.removeItem('');
+// });
