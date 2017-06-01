@@ -17,7 +17,9 @@ var app = app || {};
   news.getNewsResults = (companyTicker, callback) => {
     let params = {
       symbols: companyTicker,
-      displayType: 'full',
+      maxRecords: 10,
+      sources: 'ZACKS,CMTX:SEC,CMTX:WALLST,PRNW',
+      displayType: 'full'
     };
 
     $.ajax({ url: '/news', data: params, method: 'GET' })

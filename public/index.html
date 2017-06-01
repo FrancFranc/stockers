@@ -29,9 +29,13 @@
       <h1>{{headline}}</h1>
       <h3>Source: {{source}}</h3>
       <p>Article Date: {{timestamp}}</p>
+      {{#if categories}}
       <p>Categories: {{categories}}</p>
+      {{/if}}
+      {{#if categories}}
       <p>SubCatories: {{subCategories}}</p>
-      <p>{{fullText}}</p>
+      {{/if}}
+      <p>{{{fullText}}}</p>
     </article>
   </script>
 
@@ -74,12 +78,13 @@
 
     </section>
 
+    <section id="back-to-fav">
+      <input type="submit" value="Favorite Stocks" id="fav-button" /></form>
+    </section>
+
     <section id="result">
 
-      <div class="back-fav">
-        <form>
-          <input type="submit" value="Favorite Stocks" id="Fav-button" /></form>
-      </div>
+
 
       <div id="news-article"> </div>
 
@@ -149,14 +154,10 @@
 
   </main>
   <footer>
-    <p>Stockers&copy;</p>
-    <div class="back-fav">
-      <form>
-        <input type="submit" value="Favorite Stocks" id="Fav-button2" /></form>
-    </div>
-    <form class="About-page"/>
-      <input type="submit" value="About Us!" id="show-about"/>
+    <form class="about-page"/>
+      <input type="submit" value="About Us" id="show-about" />
     </form>
+    <p>Stockers&copy;</p>
   </footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
@@ -171,6 +172,7 @@
   <script src="/scripts/view/searchView.js"></script>
   <script src="/scripts/view/newsView.js"></script>
   <script src="/scripts/controller/stockController.js"></script>
+  <script src="/scripts/view/app.js"></script>
   <script src="/scripts/controller/indexController.js"></script>
   <script src="/scripts/controller/newsController.js"></script>
   <script src="/scripts/controller/searchController.js"></script>
