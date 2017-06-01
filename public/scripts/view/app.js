@@ -29,6 +29,7 @@ let favorites = [];
 
 function saveDataToLocalStorage(event) {
   event.preventDefault();
+  && localStorage.getItem('favorites').val
   if(localStorage.getItem('favorites')) {
     favorites = JSON.parse(localStorage.getItem('favorites'));
   }
@@ -45,6 +46,15 @@ $('#show-about').on('click',function(event){
   $('#about-us, #fav-button').show(1000);
 });
 
+function renderFavorites(){
+  var parsedFavs= JSON.parse(localStorage['favorites']);
+  let template = Handlebars.compile($('#table-template').text());
+  parsedFavs.forEach(stock => {
+    $('stock-favorites').append(template(article));
+
+
+
+}
 
 
 //"Remove" button for removing the favorites.
@@ -68,6 +78,7 @@ function addComment(event) {
   commentArray.push(commentObject);
   localStorage.setItem('comment', JSON.stringify(commentArray));
   $('#comment-textarea').empty();
+}
 // renderComment();
 }
 

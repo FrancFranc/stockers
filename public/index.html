@@ -25,7 +25,12 @@
   </script>
 
   <script id="news-template" type="text/x-handlebars-template">
+      <!-- <h1>{{stockName}} In the News</h1> this tag is up for debate... we can't finish until we know how the data is coming back from the news api. ALSO the issue with this tag as well is, assuming we are rendering multiple articles, we aren't rendering the name of the stock inside in the template... separate template for the stock name? something to discuss -->
     <article>
+
+      <p>{{articledate}}</p>
+      <p>{{articleinfo}}</p>
+
       <h1>{{headline}}</h1>
       <h3>Source: {{source}}</h3>
       <p>Article Date: {{timestamp}}</p>
@@ -36,6 +41,7 @@
       <p>SubCatories: {{subCategories}}</p>
       {{/if}}
       <p>{{{fullText}}}</p>
+
     </article>
   </script>
 
@@ -74,6 +80,8 @@
             <th> Change </th>
           </tr>
         </thead>
+        <tbody id="stock-favorites">
+        </tbody>
       </table>
 
     </section>
@@ -111,9 +119,6 @@
           <input id="add-comment" type="submit" value="Add"> </input>
         </form>
 
-      </div>
-
-      <div id="news">
       </div>
 
     </section>
@@ -167,15 +172,13 @@
   <script src="/scripts/model/stock.js"></script>
   <script src="/scripts/model/graph.js"></script>
   <script src="/scripts/model/search.js"></script>
-  <script src="/scripts/model/news.js"></script>
   <script src="/scripts/view/stockView.js"></script>
   <script src="/scripts/view/searchView.js"></script>
-  <script src="/scripts/view/newsView.js"></script>
   <script src="/scripts/controller/stockController.js"></script>
   <script src="/scripts/view/app.js"></script>
   <script src="/scripts/controller/indexController.js"></script>
-  <script src="/scripts/controller/newsController.js"></script>
   <script src="/scripts/controller/searchController.js"></script>
+  <script src="/scripts/view/app.js"></script>
   <script src="/scripts/controller/routes.js"></script>
 
 </body>
