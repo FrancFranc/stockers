@@ -1,63 +1,41 @@
-th {
-  border: blue solid 2px;
-}
-
-
-
-/*Company Name Search and Submit Button*/
-
-
-#company {
-  width: 50%;
-}
+/*------------------------------------------------------------------
+               MAIN HEADER (including conpany logo and search bar)
+--------------------------------------------------------------------*/
 
 #submit-search {
   float: right;
-  width: 50%;
 }
 
-/*RESULT page (including NEWS, GRAPH, ADD TO FAV button, COMMENT area)*/
+
+
+
+/*------------------------------------------------------------------
+RESULT page (including NEWS, GRAPH, ADD TO FAV button, COMMENT area)
+--------------------------------------------------------------------*/
+
+/*----- whole section------*/
 
 #result {
   overflow: auto;
-  height: 60%;
 }
+
+/*----- Back To Fav button ------*/
 
 #back-to-fav {
   float: left;
 
 }
 
-h1 {
-  float: left;
-  width: 100px;
-  height: 60px;
-}
+/*----- News ------*/
 
 #news {
   float: left;
-  width: 50%;
-  height: 50%;
 }
+
+
+
+/*----- Right column ------*/
 
 .right-column {
   float: left;
-  width: 50%;
-}
-
-
-#graph {
-
-}
-
-#add-fav {
-
-}
-
-#show-comment {
-
-}
-
-#insert-comment {
-
 }
