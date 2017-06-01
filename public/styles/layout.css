@@ -38,3 +38,14 @@ RESULT page (including NEWS, GRAPH, ADD TO FAV button, COMMENT area)
 .right-column {
   float: left;
 }
+
+
+
+/*------------------------------------------------------------------
+                              FOOTER
+--------------------------------------------------------------------*/
+
+footer {
+  position: static;
+  z-index: 10;
+}
