@@ -50,21 +50,20 @@
 <body>
 
   <main>
+
     <section id="main-header">
-
-      <div class='stockers-head'>
-        <img src="img/stockers-text.png">
-        <h1> STOCKERS </h1>
+      <img class='logo' src="img/stockers-white.png">
+      <h1> STOCKERS </h1>
+      <div id='ticker-widget'>
+        <iframe width="960" noresize="noresize" scrolling="no" height="16" frameborder="0" src="https://widgets.tc2000.com/WidgetServer.ashx?id=55768"></iframe>
       </div>
-
       <div id="search-container">
         <form>
-          <input type="text" placeholder="Company Name" id="company" />
+          <input type="text" placeholder="Type Company Name here." id="company" />
           <div id="searchResults"></div>
           <input type="submit" value="Search" id="submit-search" />
         </form>
       </div>
-
     </section>
 
     <section id="favorites">
