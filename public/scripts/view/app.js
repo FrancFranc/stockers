@@ -16,6 +16,8 @@ $(document).ready(function(){
   $('#fav-button').on('click', app.indexController.index);
 
   $('#submit-search').on('click', app.stockController.index);
+
+  $('#insert-comment').on('submit', addComment);
 });
 
 
@@ -60,6 +62,9 @@ function renderFavorites(){
 //"Remove" button for removing the favorites.
 
 
+
+
+
 // "Insert Comments" textbox.   When user types in his comment about this particular stock, this comment will show in the div above (#show-comments).
 
 
@@ -78,16 +83,21 @@ function addComment(event) {
   commentArray.push(commentObject);
   localStorage.setItem('comment', JSON.stringify(commentArray));
   $('#comment-textarea').empty();
-}
-// renderComment();
+  renderComment(commentArray);
 }
 
-$('#add-comment').on('click', addComment);
+function renderComment(commentArray) {
+  for (let i=0; i<commentArray.length; i++) {
+    if (commentArray[i].company = companyName) {
+      $('#comment-added').append(commentArray[i].comment);
+    }
+  }
+}
+
+
+
+
 
 // Render the comment that user input onto the <p> (#comment-added)
 
 // Button to remove the user's comment.
-
-// $('#remove-comment').on('click',function(event){
-//   localStorage.removeItem('');
-// });
