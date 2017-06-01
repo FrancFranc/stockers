@@ -18,7 +18,7 @@ var app = app || {};
         }
         $('#result, #back-to-fav, #fav-button').show(1000);
         let ticker = event.target.form[0].value;
-        app.stock.getStockInfo(ticker, $('#graph-start-date').val(), app.stockView.index);
+        app.stock.getStockInfo(ticker, date, app.stockView.index);
         app.newsController.index();
         // '' will trigger default start date and our default date is beginning of 2017
       }

@@ -9,7 +9,8 @@ var app = app || {};
 
   search.getSearchResults = (keyword, callback) => {
     let params = {
-      keyword: keyword
+      keyword: keyword,
+      limit: 4
     };
 
     $.ajax({ url: '/search', data: params, method: 'GET' })
