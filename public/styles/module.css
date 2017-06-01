@@ -39,7 +39,23 @@ hr {
 }
 
 
-/*styling for the about page*/
+/* SEARCH CONTAINER (including search COMPANY NAME and SEARCH button)*/
+#search-container {
+  padding: 5px;
+  background-color: black;
+  color: white;
+}
+
+#company {
+
+
+}
+
+#submit-search {
+
+}
+
+/*styling for the ABOUT US page*/
 
 #about-us {
   max-width: 100%;
@@ -58,4 +74,26 @@ hr {
   display: inline-block;
   text-align: center;
   max-width: 100%;
+}
+
+
+/* FOOTER (including ABOUT US button & STOCKERS COPYRIGHT) */
+
+footer {
+
+  height: 10%;
+  margin-top: 90%;
+  background-color: black;
+  color: white;
+}
+
+#show-about {
+
+  background-color: black;
+  color: white;
+  border: none;
+}
+
+footer p {
+
 }
