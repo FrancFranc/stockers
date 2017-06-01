@@ -23,22 +23,6 @@ hr {
   margin-top: 0.5%;
 }
 
-/*canvas {
-  max-width:80%;
-  max-height:80%;
-}*/
-
-#news {
-  width: 40%;
-  border: 1px solid black;
-  overflow-y: scroll;
-}
-
-#news * {
-  max-width: 100%;
-}
-
-
 /*styling for the about page*/
 
 #about-us {
