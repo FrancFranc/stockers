@@ -79,7 +79,7 @@ $('#add-comment').on('click', addComment);
 
 // Render the comment that user input onto the <p> (#comment-added)
 
-var commentArray = [];
+var commentArray = [1,2,3];
 
 
 
