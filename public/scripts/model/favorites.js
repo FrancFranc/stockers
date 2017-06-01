@@ -3,24 +3,25 @@
 var app = app || {};
 
 (function(module) {
-  const stock = {};
+  const favorites = {};
 
-  stock.stockData = [];
-  stock.ticker = '';
+  favorites.favoritesData = [];
+  // favorites.ticker = '';
 
-  stock.getStockInfo = (companyTicker, startDate, callback) => {
-    stock.ticker = companyTicker;
+  favorites.getFavoritesInfo = (companyTicker, startDate, callback) => {
+    favorites.ticker = companyTicker;
     let params = {
       symbol: companyTicker,
       startDate: startDate,
+      maxRecords: 1,
       type: 'daily',
       interval: '1',
       exchange: 'NYSE,AMEX,NASDAQ',
     };
     $.ajax({ url: '/barChart', data: params, method: 'GET' })
-      .then(data => stock.stockData = data)
+      .then(data => favorites.favoritesData = data)
       .then(callback);
   };
 
-  module.stock = stock;
+  module.favorites = favorites;
 })(app);

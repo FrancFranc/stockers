@@ -19,6 +19,7 @@ $(document).ready(function(){
     $('#about-us, #fav-button').show(1000);
   });
   $('#insert-comment').on('submit', addComment);
+  renderFavorites();
 });
 
 function saveDataToLocalStorage(event) {
@@ -29,14 +30,14 @@ function saveDataToLocalStorage(event) {
   }
   favorites.push(app.stock.ticker);
   localStorage.setItem('favorites', JSON.stringify(favorites));
-  renderFavorites(favorites);
+  renderFavorites();
 }
 
 function renderFavorites(){
+  $('#stock-favorites').html('');
   var parsedFavs= JSON.parse(localStorage['favorites']);
-  for (var i=0; i<parsedFavs; i++){
-    let data = app.stock.getStockInfo(parsedFavs[i],'20170505', app.favoritesView.index);
-    return data;
+  for (var i=0; i<parsedFavs.length; i++){
+    app.favorites.getFavoritesInfo(parsedFavs[i],'20170601', app.favoritesView.index);
   }
 }
 
