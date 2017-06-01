@@ -6,7 +6,6 @@ var app = app || {};
   const newsController = {};
 
   newsController.index = () => {
-    console.log('in news controller');
     app.news.getNewsResults(app.stock.ticker, app.newsView.index);
   };
 

@@ -35,10 +35,22 @@ function saveDataToLocalStorage(event) {
 
 function renderFavorites(){
   $('#stock-favorites').html('');
-  var parsedFavs= JSON.parse(localStorage['favorites']);
-  for (var i=0; i<parsedFavs.length; i++){
-    app.favorites.getFavoritesInfo(parsedFavs[i],'20170601', app.favoritesView.index);
+  let parsedFavs = [];
+  let today = getToday();
+  if(localStorage.getItem('favorites')) {
+    parsedFavs = JSON.parse(localStorage.getItem('favorites'));
   }
+  for (let i = 0; i < parsedFavs.length; i++){
+    app.favorites.getFavoritesInfo(parsedFavs[i], today, app.favoritesView.index);
+  }
+}
+
+function getToday() {
+  let today = new Date();
+  let formatted = today.getFullYear();
+  today.getMonth() < 10 ? formatted += '0' + today.getMonth() : formatted += today.getMonth();
+  today.getDay() < 10 ? formatted += '0' + today.getDay() : formatted += today.getDay();
+  return formatted;
 }
 
 function addComment(event) {

@@ -15,7 +15,7 @@ var app = app || {};
       } else {
         $('#favorites, #about-us').hide(1000);
       }
-      $('#result').show(1000);
+      $('#result, #back-to-fav, #fav-button').show(1000);
       let ticker = event.target.form[0].value;
       app.stock.getStockInfo(ticker, $('#graph-start-date').val(), app.stockView.index);
       app.newsController.index();
