@@ -12,7 +12,7 @@ var app = app || {};
       delay = 1000;
     }
     $('#result, #about-us, #fav-button').hide(delay);
-    $('#show-about').show(1000);
+    $('#show-about, #favorites').show(1000);
   };
 
   module.indexController = indexController;
