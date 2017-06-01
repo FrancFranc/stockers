@@ -21,17 +21,17 @@ $(document).ready(function(){
 });
 
 
-// Handlebars for the data shown in table
-let source   = $('#table-template').html();
-let template = Handlebars.compile(source);
+// // Handlebars for the data shown in table
+// let source   = $('#table-template').html();
+// let template = Handlebars.compile(source);
 
 // Event Listener for "Add to Favorites" button, so when user click on it, the selected stock will show on the table on front page.
 
-let favorites = [];
+// let favorites = [];
 
 function saveDataToLocalStorage(event) {
   event.preventDefault();
-  && localStorage.getItem('favorites').val
+  let favorites = [];
   if(localStorage.getItem('favorites')) {
     favorites = JSON.parse(localStorage.getItem('favorites'));
   }
@@ -53,9 +53,7 @@ function renderFavorites(){
   let template = Handlebars.compile($('#table-template').text());
   parsedFavs.forEach(stock => {
     $('stock-favorites').append(template(article));
-
-
-
+  });
 }
 
 
@@ -71,7 +69,7 @@ function renderFavorites(){
 function addComment(event) {
   event.preventDefault();
   let commentArray = [];
-  let companyName = app.stockController.ticker;
+  let companyName = app.stock.ticker;
   let comment = $('#comment-textarea').val();
   if (localStorage.getItem('comment')) {
     commentArray = JSON.parse(localStorage.getItem('comment'));
@@ -83,12 +81,16 @@ function addComment(event) {
   commentArray.push(commentObject);
   localStorage.setItem('comment', JSON.stringify(commentArray));
   $('#comment-textarea').empty();
-  renderComment(commentArray);
+  renderComment();
 }
 
-function renderComment(commentArray) {
-  for (let i=0; i<commentArray.length; i++) {
-    if (commentArray[i].company = companyName) {
+function renderComment() {
+  let commentArray = [];
+  if (localStorage.getItem('comment')) {
+    commentArray = JSON.parse(localStorage.getItem('comment'));
+  }
+  for (let i=0; i < commentArray.length; i++) {
+    if (commentArray[i].company == app.stock.ticker) {
       $('#comment-added').append(commentArray[i].comment);
     }
   }
