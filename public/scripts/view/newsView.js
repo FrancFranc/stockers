@@ -14,6 +14,7 @@ var app = app || {};
       $news.append(template(article));
     }
   );
-
+  console.log('inside newsView.index');
+  }
   module.newsView = newsView;
 })(app);
