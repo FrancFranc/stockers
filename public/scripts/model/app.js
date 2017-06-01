@@ -5,14 +5,11 @@ var app = app || {};
 //Event Listener for "Search" button on homepage
 
 $(document).ready(function(){
-
   $('#result, #about-us, #fav-button').hide();
   $('#company').on('input', app.searchController.index);
   $('#graph-start-date').val('2017-01-01');
-
   $('#graph-start-date').on('change', app.graph.changeStartDate);
   $('#searchResults').on('click', 'p', app.searchView.selectCompany);
-
   $('#fav-button').on('click', app.indexController.index);
   $('#add-fav').on('click', saveDataToLocalStorage);
   $('#submit-search').on('click', app.stockController.index);
@@ -23,15 +20,6 @@ $(document).ready(function(){
   });
   $('#insert-comment').on('submit', addComment);
 });
-
-
-// // Handlebars for the data shown in table
-// let source   = $('#table-template').html();
-// let template = Handlebars.compile(source);
-
-// Event Listener for "Add to Favorites" button, so when user click on it, the selected stock will show on the table on front page.
-
-// let favorites = [];
 
 function saveDataToLocalStorage(event) {
   event.preventDefault();
@@ -44,30 +32,17 @@ function saveDataToLocalStorage(event) {
   renderFavorites(favorites);
 }
 
-
-
-
-
 function renderFavorites(){
   var parsedFavs= JSON.parse(localStorage['favorites']);
-  let template = Handlebars.compile($('#table-template').text());
-  parsedFavs.forEach(stock => {
-    $('stock-favorites').append(template(stock));
-  });
+  for (var i=0; i<parsedFavs; i++){
+    let data = app.stock.getStockInfo(parsedFavs[i],'20170505', app.favoritesView.index);
+    return data;
+  }
 }
-
-
-//"Remove" button for removing the favorites.
-
-
-
-
-
-// "Insert Comments" textbox.   When user types in his comment about this particular stock, this comment will show in the div above (#show-comments).
-
 
 function addComment(event) {
   event.preventDefault();
+  $('#comment-added').html('');
   let commentArray = [];
   let companyName = app.stock.ticker;
   let comment = $('#comment-textarea').val();
@@ -80,7 +55,7 @@ function addComment(event) {
   };
   commentArray.push(commentObject);
   localStorage.setItem('comment', JSON.stringify(commentArray));
-  $('#comment-textarea').empty();
+  $('#comment-textarea').val('');
   renderComment();
 }
 
