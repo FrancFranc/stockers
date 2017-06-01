@@ -6,9 +6,10 @@ var app = app || {};
   const favoritesView = {};
 
 
-  favoritesView.index = (data) => {
+  favoritesView.index = () => {
     let template = Handlebars.compile($('#table-template').text());
-    $('stock-favorites').append(template(data));
+    $('#stock-favorites').append(template(app.favorites.favoritesData.results[0]));
+    console.log(app.favorites.favoritesData.results[0]);
   };
 
   module.favoritesView = favoritesView;
