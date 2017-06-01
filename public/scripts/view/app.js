@@ -23,13 +23,6 @@ $(document).ready(function(){
 let source   = $('#table-template').html();
 let template = Handlebars.compile(source);
 
-
-
-// Hide section "Favourite Stocks" and show section "Stock Search Result"
-
-
-
-
 // Event Listener for "Add to Favorites" button, so when user click on it, the selected stock will show on the table on front page.
 
 let favorites = [];
@@ -59,12 +52,15 @@ $('#show-about').on('click',function(event){
 
 // "Insert Comments" textbox.   When user types in his comment about this particular stock, this comment will show in the div above (#show-comments).
 
-let commentArray = [];
-let companyName = app.stockController.ticker;
 
 function addComment(event) {
   event.preventDefault();
+  let commentArray = [];
+  let companyName = app.stockController.ticker;
   let comment = $('#comment-textarea').val();
+  if (localStorage.getItem('comment')) {
+    commentArray = JSON.parse(localStorage.getItem('comment'));
+  }
   commentArray.push(comment);
   localStorage.setItem('comment', JSON.stringify(commentArray));
   $('#comment-textarea').empty();
@@ -73,13 +69,7 @@ function addComment(event) {
 
 $('#add-comment').on('click', addComment);
 
-
-
 // Render the comment that user input onto the <p> (#comment-added)
-
-
-
-
 
 // Button to remove the user's comment.
 
