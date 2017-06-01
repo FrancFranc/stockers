@@ -5,3 +5,59 @@ th {
 
 
 /*Company Name Search and Submit Button*/
+
+
+#company {
+  width: 50%;
+}
+
+#submit-search {
+  float: right;
+  width: 50%;
+}
+
+/*RESULT page (including NEWS, GRAPH, ADD TO FAV button, COMMENT area)*/
+
+#result {
+  overflow: auto;
+  height: 60%;
+}
+
+#back-to-fav {
+  float: left;
+
+}
+
+h1 {
+  float: left;
+  width: 100px;
+  height: 60px;
+}
+
+#news {
+  float: left;
+  width: 50%;
+  height: 50%;
+}
+
+.right-column {
+  float: left;
+  width: 50%;
+}
+
+
+#graph {
+
+}
+
+#add-fav {
+
+}
+
+#show-comment {
+
+}
+
+#insert-comment {
+
+}
