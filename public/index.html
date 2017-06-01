@@ -15,22 +15,24 @@
 
   <script id="table-template" type="text/x-handlebars-template">
         <tr>
-          <td>{{Ticker}}</td>
-          <td>{{Name}}</td>
-          <td>{{Currency}}</td>
-          <td>{{Last Price}}</td>
-          <td>{{Change}}</td>
-          <td>{{Remove}}</td>
+          <td>{{symbol}}</td>
+          <td>{{timestamp}}</td>
+          <td>{{tradingDay}}</td>
+          <td>{{tickPrice}}</td>
+          <td>{{tickSize}}</td>
+          <td>{{open}}</td>
+          <td>{{high}}</td>
+          <td>{{low}}</td>
+          <td>{{close}}</td>
+          <td>{{volume}}</td>
+          <td>{{openInterest}}</td>
         </tr>
   </script>
 
   <script id="news-template" type="text/x-handlebars-template">
-      <!-- <h1>{{stockName}} In the News</h1> this tag is up for debate... we can't finish until we know how the data is coming back from the news api. ALSO the issue with this tag as well is, assuming we are rendering multiple articles, we aren't rendering the name of the stock inside in the template... separate template for the stock name? something to discuss -->
     <article>
-
       <p>{{articledate}}</p>
       <p>{{articleinfo}}</p>
-
       <h1>{{headline}}</h1>
       <h3>Source: {{source}}</h3>
       <p>Article Date: {{timestamp}}</p>
@@ -41,11 +43,8 @@
       <p>SubCatories: {{subCategories}}</p>
       {{/if}}
       <p>{{{fullText}}}</p>
-
     </article>
   </script>
-
-
 </head>
 
 <body>
@@ -73,11 +72,17 @@
       <table id="sample-table">
         <thead>
           <tr>
-            <th> Symbol </th>
-            <th> Name </th>
-            <th> Currency </th>
-            <th> Last Price </th>
-            <th> Change </th>
+            <th>symbol</th>
+            <th>timestamp</th>
+            <th>tradingDay</th>
+            <th>tickPrice</th>
+            <th>tickSize</th>
+            <th>open</th>
+            <th>high</th>
+            <th>low</th>
+            <th>close</th>
+            <th>volume</th>
+            <th>openInterest</th>
           </tr>
         </thead>
         <tbody id="stock-favorites">
@@ -166,12 +171,13 @@
   <script src="/scripts/view/stockView.js"></script>
   <script src="/scripts/view/searchView.js"></script>
   <script src="/scripts/view/newsView.js"></script>
+  <script src="/scripts/view/favoritesView.js"></script>
   <script src="/scripts/controller/newsController.js"></script>
   <script src="/scripts/controller/stockController.js"></script>
   <script src="/scripts/controller/indexController.js"></script>
   <script src="/scripts/controller/searchController.js"></script>
 
-  <script src="/scripts/view/app.js"></script>
+  <script src="/scripts/model/app.js"></script>
   <script src="/scripts/controller/routes.js"></script>
 
 </body>
