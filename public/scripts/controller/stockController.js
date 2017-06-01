@@ -11,9 +11,9 @@ var app = app || {};
       page.show('/stockData');
       $('#comment-added').html('');
       if($('#favorites').css('display') === 'none') {
-        $('#about-us, #fav-button').hide(1000);
+        $('#about-us').hide(1000);
       } else {
-        $('#favorites, #about-us, #fav-button').hide(1000);
+        $('#favorites, #about-us').hide(1000);
       }
       $('#result').show(1000);
       let ticker = event.target.form[0].value;
