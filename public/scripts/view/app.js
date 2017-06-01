@@ -51,6 +51,10 @@ $('#show-about').on('click',function(event){
   $('#about-us, #Fav-button2').show(1000);
 });
 
+function renderFavorites(){
+  for (var i = 0; i < favorites.length; i++)
+  var template = Handlebars.compile($('#table-template').text());
+}
 
 
 //"Remove" button for removing the favorites.
@@ -67,6 +71,7 @@ function addComment(event) {
   commentArray.push(comment);
   localStorage.setItem('comment', JSON.stringify(commentArray));
   $('#comment-textarea').empty();
+}
 // renderComment();
 
 
