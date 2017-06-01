@@ -61,7 +61,11 @@ function addComment(event) {
   if (localStorage.getItem('comment')) {
     commentArray = JSON.parse(localStorage.getItem('comment'));
   }
-  commentArray.push(comment);
+  let commentObject = {
+    company: companyName,
+    comment: comment
+  };
+  commentArray.push(commentObject);
   localStorage.setItem('comment', JSON.stringify(commentArray));
   $('#comment-textarea').empty();
 // renderComment();
