@@ -24,7 +24,6 @@ var app = app || {};
 
     $.ajax({ url: '/news', data: params, method: 'GET' })
       .then(data => news.newsResults = data)
-      .then(() => console.log(news.newsResults))
       .then(callback);
   };
   module.news = news;
