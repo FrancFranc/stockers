@@ -17,7 +17,7 @@ var app = app || {};
   news.getNewsResults = (companyTicker, callback) => {
     let params = {
       symbols: companyTicker,
-      maxRecords: 10,
+      maxRecords: 5,
       sources: 'ZACKS,CMTX:SEC,CMTX:WALLST,PRNW',
       displayType: 'full'
     };
