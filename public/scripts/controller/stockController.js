@@ -8,18 +8,20 @@ var app = app || {};
   stockController.index = (event) => {
     if(event.target) {
       event.preventDefault();
-      page.show('/stockData');
-      $('#comment-added').html('');
-      if($('#favorites').css('display') === 'none') {
-        $('#about-us').hide(1000);
-      } else {
-        $('#favorites, #about-us').hide(1000);
+      if($('#company').val() !== '') {
+        page.show('/stockData');
+        $('#comment-added').html('');
+        if($('#favorites').css('display') === 'none') {
+          $('#about-us').hide(1000);
+        } else {
+          $('#favorites, #about-us').hide(1000);
+        }
+        $('#result, #back-to-fav, #fav-button').show(1000);
+        let ticker = event.target.form[0].value;
+        app.stock.getStockInfo(ticker, date, app.stockView.index);
+        app.newsController.index();
+        // '' will trigger default start date and our default date is beginning of 2017
       }
-      $('#result, #back-to-fav, #fav-button').show(1000);
-      let ticker = event.target.form[0].value;
-      app.stock.getStockInfo(ticker, $('#graph-start-date').val(), app.stockView.index);
-      app.newsController.index();
-       // '' will trigger default start date and our default date is beginning of 2017
     } else {
       page.show('/'); // there will be no event.target if it is just on page load, so go to index
     }
