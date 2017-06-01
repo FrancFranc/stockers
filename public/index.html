@@ -91,12 +91,18 @@
 
     </section>
 
-    <section>
-      <input type="submit" value="Favorite Stocks" id="fav-button" />
-    </section>
-
     <section id="result">
-      <h1 id="company-name"></h1>
+
+      <form id="back-to-fav">
+        <input type="submit" value="Back to Favorite Stocks" id="fav-button" />
+      </form>
+
+      <div id="news"></div>
+
+      <div class="right-column">
+
+        <h1 id="company-name"></h1>
+
         <div class="graph">
           <canvas id="stock-graph"></canvas>
           <label>Start Date: <input type="date" id="graph-start-date" value="2017-01-03"></label>
@@ -114,9 +120,8 @@
           <textarea id="comment-textarea" name="comments" col="30" rows="6"> </textarea>
           <input id="add-comment" type="submit" value="Add">
         </form>
-
-      <div id="news">
       </div>
+
     </section>
 
     <section id="about-us">

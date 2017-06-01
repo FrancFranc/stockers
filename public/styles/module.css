@@ -42,8 +42,8 @@ hr {
 /* SEARCH CONTAINER (including search COMPANY NAME and SEARCH button)*/
 #search-container {
   padding: 5px;
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black;
 }
 
 #company {
