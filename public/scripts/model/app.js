@@ -5,7 +5,7 @@ var app = app || {};
 //Event Listener for "Search" button on homepage
 
 $(document).ready(function(){
-  $('#result, #about-us, #fav-button').hide();
+  $('#result, #about-us').hide();
   $('#company').on('input', app.searchController.index);
   $('#graph-start-date').val('2017-01-01');
   $('#graph-start-date').on('change', app.graph.changeStartDate);
@@ -66,7 +66,7 @@ function renderComment() {
   }
   for (let i=0; i < commentArray.length; i++) {
     if (commentArray[i].company == app.stock.ticker) {
-      $('#comment-added').append(commentArray[i].comment);
+      $('#comment-added').append(`<p>${commentArray[i].comment}</p>`);
     }
   }
 }
