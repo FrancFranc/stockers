@@ -102,22 +102,27 @@
 
         <h1 id="company-name"></h1>
 
-        <div class="graph">
-          <canvas id="stock-graph"></canvas>
-          <label>Start Date: <input type="date" id="graph-start-date" value="2017-01-01"></label>
-        </div>
-
-        <form>
-          <input type="submit" value="Add To Favorite" id="add-fav" />
-        </form>
-
         <div class="show-comment">
           <p id="comment-added"></p>
         </div>
 
+        <div class="graph">
+          <canvas id="stock-graph"></canvas>
+        </div>
+
+        <div class="date-addfav">
+          <label>Start Date: <input type="date" id="graph-start-date" value="2017-01-01"></label>
+          <form>
+            <input type="submit" value="Add To Favorites" id="add-fav" />
+          </form>
+        </div>
+
         <form id="comment">
-          <textarea id="comment-textarea" name="comments" col="30" rows="6"> </textarea>
-          <input id="add-comment" type="submit" value="Add">
+          <textarea id="comment-textarea" name="comments"> </textarea>
+        </form>
+
+        <form>
+          <input id="add-comment" type="submit" value="Add Comment">
         </form>
       </div>
 
