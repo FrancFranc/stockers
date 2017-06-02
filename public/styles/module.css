@@ -211,6 +211,7 @@ canvas {
 }
 
 .graph {
+  padding-top: 2%;
   position: relative;
   margin: 0 auto;
   width: 100%;
@@ -218,9 +219,9 @@ canvas {
 
 .date-addfav {
   width: 80%;
-  height: 5%;
-  padding-top: 2%;
-  padding-bottom: 2%;
+  height: 27px;
+  margin-bottom: 3%;
+
 }
 
 .date-addfav label {
@@ -231,7 +232,6 @@ canvas {
 
 #graph-start-date {
   width: 70%;
-  height: 29%;
 }
 
 #add-fav {
@@ -273,21 +273,31 @@ canvas {
 
 #about-us {
   max-width: 100%;
+
 }
 
-.about-title {
+#about-us h1 {
   text-align:center;
   margin-bottom: 2%;
   font-size: 3em;
   max-width: 100%;
 }
 
-
 .about-each {
-  margin: auto 2%;
-  display: inline-block;
-  text-align: center;
-  max-width: 100%;
+  display:inline-block;
+  width: 40%;
+}
+
+.about-img {
+  display:inline-block;
+}
+
+.about-info {
+  display:inline-block;
+}
+
+.about-info * {
+  text-align: left;
 }
 
 
@@ -296,10 +306,12 @@ canvas {
 --------------------------------------------------------------------*/
 
 footer {
-
+  width: 100%;
+  position: fixed;
   height: 10%;
   background-color: black;
   color: white;
+  z-index: 10;
 }
 
 #show-about {
