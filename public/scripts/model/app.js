@@ -18,7 +18,7 @@ $(document).ready(function(){
     $('#result, #favorites').hide(1000);
     $('#about-us, #fav-button').show(1000);
   });
-  $('#insert-comment').on('submit', addComment);
+  $('#add-comment').on('click', addComment);
   renderFavorites();
 });
 
