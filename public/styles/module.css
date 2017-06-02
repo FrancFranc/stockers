@@ -328,6 +328,7 @@ footer {
   height: 10%;
   background-color: black;
   color: white;
+  padding-top: 1%;
   z-index: 10;
 }
 
