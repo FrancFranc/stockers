@@ -291,8 +291,7 @@ canvas {
 
 #about-us {
   max-width: 100%;
-  padding-bottom: 3%;
-
+  padding-bottom: 5%;
 }
 
 #about-us h1 {
@@ -320,6 +319,18 @@ canvas {
   text-align: left;
 }
 
+.about-michael {
+  padding-bottom: 2.5%;
+}
+
+hr {
+  width: 40%;
+  column-rule-color: : black;
+}
+
+#about-us p {
+  padding-top: 3%;
+}
 
 /*------------------------------------------------------------------
        FOOTER (including ABOUT US button & STOCKERS COPYRIGHT)
