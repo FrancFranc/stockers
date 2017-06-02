@@ -55,7 +55,6 @@ function getToday() {
 
 function addComment(event) {
   event.preventDefault();
-  $('#comment-added').html('');
   let commentArray = [];
   let companyName = app.stock.ticker;
   let comment = $('#comment-textarea').val();
@@ -74,6 +73,7 @@ function addComment(event) {
 
 function renderComment() {
   let commentArray = [];
+  $('#comment-added').html('');
   if (localStorage.getItem('comment')) {
     commentArray = JSON.parse(localStorage.getItem('comment'));
   }
