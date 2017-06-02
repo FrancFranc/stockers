@@ -23,6 +23,9 @@ th {
 #main-header h1 {
   padding-top: 1%;
   padding-bottom: 2.6%;
+  font-family: 'Cormorant SC', serif;
+  font-size:2.5em;
+
 }
 
 
@@ -44,7 +47,8 @@ th {
   color: black;
   padding-top: 0.5%;
   padding-bottom: 0.5%;
-
+  font-family: 'Cormorant SC', serif;
+  font-size: 1em
 }
 
 #submit-search {
@@ -58,7 +62,8 @@ th {
   color: black;
   padding-top: 0.5%;
   padding-bottom: 0.5%;
-
+  font-family: 'Cormorant SC', serif;
+  font-size: 1em
 }
 
 ::-webkit-input-placeholder {
@@ -158,18 +163,23 @@ hr {
   text-align: center;
   padding-top: 1%;
   padding-bottom: 1%;
+  font-family: 'Cormorant SC', serif;
+  font-size:1.3em;
 }
 
 #news h1 {
   text-align: center;
   padding-top: 1%;
   padding-bottom: 1%;
+  font-family: 'Cormorant SC', serif;
+  font-size:1.5em;
 }
 
 #news p {
   text-align: justify;
   padding-top: 1%;
   padding-bottom: 1%;
+  font-size: 1em;
 }
 
 #news::-webkit-scrollbar {
@@ -199,6 +209,8 @@ hr {
   padding-bottom: 2%;
   height: 5%;
   color: black;
+  font-family: 'Cormorant SC', serif;
+  font-size: 2.4em
 }
 
 #comment-added p {
@@ -244,6 +256,8 @@ canvas {
   padding-bottom: 1%;
   padding-left: 2%;
   padding-right: 2%;
+  font-family: 'Cormorant SC', serif;
+  font-size: 1em;
 }
 
 #comment-textarea {
@@ -265,6 +279,8 @@ canvas {
   padding-bottom: 1%;
   padding-left: 4%;
   padding-right: 4%;
+  font-family: 'Cormorant SC', serif;
+  font-size: .8em;
 }
 
 /*------------------------------------------------------------------
@@ -280,6 +296,7 @@ canvas {
   margin-bottom: 2%;
   font-size: 3em;
   max-width: 100%;
+  font-family: 'Cormorant SC', serif;
 }
 
 
