@@ -174,10 +174,22 @@ canvas {
 .graph {
   position: relative;
   margin: 0 auto;
-  width: 50%;
+  width: 100%;
 }
 
+.date-addfav label {
+  width: 50%;
+  float: left;
+}
+
+#graph-start-date {
+  width: 70%;
+}
+
+
 #add-fav {
+  float: left;
+  width: 50%;
   border: none;
   background-color: black;
   color: white;
@@ -185,6 +197,8 @@ canvas {
   padding-bottom: 1%;
   padding-left: 2%;
   padding-right: 2%;
+
+
 
 }
 
@@ -192,15 +206,20 @@ canvas {
 
 }
 
+#comment-textarea {
+  width: 100%;
+  height: 15%;
+}
+
 #add-comment {
   border: none;
+  text-align: right;
   background-color: black;
   color: white;
   padding-top: 1%;
   padding-bottom: 1%;
   padding-left: 2%;
   padding-right: 2%;
-
 }
 
 /*------------------------------------------------------------------
