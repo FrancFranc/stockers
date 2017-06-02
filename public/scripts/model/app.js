@@ -15,8 +15,14 @@ $(document).ready(function(){
   $('#submit-search').on('click', app.stockController.index);
   $('#show-about').on('click',function(event){
     event.preventDefault();
-    $('#result, #favorites').hide(1000);
-    $('#about-us, #fav-button').show(1000);
+    if (this.value === 'About Us'){
+      $(this).val('Close')
+    } else {
+      $(this).val('About Us')
+    }
+    $('#about-us').toggle('show');
+    $('#result').hide(1000);
+    $('#fav-button').show(1000);
   });
   $('#insert-comment').on('submit', addComment);
   renderFavorites();
