@@ -13,7 +13,7 @@ var app = app || {};
     let params = {
       symbol: companyTicker,
       startDate: startDate,
-      type: 'daily',
+      type: 'weekly',
       interval: '1',
       exchange: 'NYSE,AMEX,NASDAQ',
     };
