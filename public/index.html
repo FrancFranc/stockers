@@ -8,6 +8,7 @@
   <meta property="og:url" content="" />
   <meta property="og:image" content="" />
   <meta property="og:description" content="STOCK your protfolio! Track it and Manage it!" />
+  <link href="https://fonts.googleapis.com/css?family=Cormorant+SC:400,700" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="/styles/reset.css"/>
   <link rel="stylesheet" type="text/css" href="/styles/base.css"/>
   <link rel="stylesheet" type="text/css" href="/styles/layout.css"/>
@@ -16,16 +17,16 @@
   <script id="table-template" type="text/x-handlebars-template">
         <tr>
           <td>{{symbol}}</td>
-          <td>{{timestamp}}</td>
+
           <td>{{tradingDay}}</td>
-          <td>{{tickPrice}}</td>
-          <td>{{tickSize}}</td>
+
+
           <td>{{open}}</td>
           <td>{{high}}</td>
           <td>{{low}}</td>
           <td>{{close}}</td>
           <td>{{volume}}</td>
-          <td>{{openInterest}}</td>
+
         </tr>
   </script>
 
@@ -71,17 +72,16 @@
       <table id="sample-table">
         <thead>
           <tr>
-            <th>symbol</th>
-            <th>timestamp</th>
-            <th>tradingDay</th>
-            <th>tickPrice</th>
-            <th>tickSize</th>
-            <th>open</th>
-            <th>high</th>
-            <th>low</th>
-            <th>close</th>
-            <th>volume</th>
-            <th>openInterest</th>
+            <th>Symbol</th>
+
+            <th>TradingDay</th>
+
+            <th>Open</th>
+            <th>High</th>
+            <th>Low</th>
+            <th>Close</th>
+            <th>Volume</th>
+
           </tr>
         </thead>
         <tbody id="stock-favorites">

@@ -66,6 +66,41 @@ th {
   background: white;
 }
 
+/*------------------------------------------------------------------
+table stuff
+--------------------------------------------------------------------*/
+
+#sample-table {
+  /*margin:2%;*/
+}
+
+#sample-table th {
+  background-color:black;
+  color:white;
+  border: none;
+  background-color: black;
+  color: white;
+
+  margin: 10%;
+  /*padding-left: 5%;
+  padding-right: 5%;*/
+  /*padding-top: 1%;
+  padding-bottom: 1%;
+  padding-left: 2%;
+  padding-right: 2%;*/
+  font-family: 'Cormorant SC', serif;
+  font-size: 1.3em;
+  width: 200px;
+}
+
+#table-template td {
+  /*padding: auto 4%;*/
+  font-family: 'Cormorant SC', serif;
+  font-size: 1.5em;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
 
 
 /*------------------------------------------------------------------
