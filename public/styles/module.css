@@ -80,20 +80,25 @@ table stuff
   border: none;
   background-color: black;
   color: white;
-  padding: auto 4%;
+
   margin: 10%;
+  /*padding-left: 5%;
+  padding-right: 5%;*/
   /*padding-top: 1%;
   padding-bottom: 1%;
   padding-left: 2%;
   padding-right: 2%;*/
   font-family: 'Cormorant SC', serif;
-  font-size: 1.5em;
+  font-size: 1.3em;
+  width: 200px;
 }
 
 #table-template td {
-  padding: auto 4%;
+  /*padding: auto 4%;*/
   font-family: 'Cormorant SC', serif;
   font-size: 1.5em;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
 
