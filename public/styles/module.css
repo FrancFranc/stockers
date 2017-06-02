@@ -66,6 +66,36 @@ th {
   background: white;
 }
 
+/*------------------------------------------------------------------
+table stuff
+--------------------------------------------------------------------*/
+
+#sample-table {
+  /*margin:2%;*/
+}
+
+#sample-table th {
+  background-color:black;
+  color:white;
+  border: none;
+  background-color: black;
+  color: white;
+  padding: auto 4%;
+  margin: 10%;
+  /*padding-top: 1%;
+  padding-bottom: 1%;
+  padding-left: 2%;
+  padding-right: 2%;*/
+  font-family: 'Cormorant SC', serif;
+  font-size: 1.5em;
+}
+
+#table-template td {
+  padding: auto 4%;
+  font-family: 'Cormorant SC', serif;
+  font-size: 1.5em;
+}
+
 
 
 /*------------------------------------------------------------------
