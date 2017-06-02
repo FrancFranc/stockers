@@ -15,14 +15,14 @@ th {
 }
 
 .logo {
-  width: 15%;
-  padding-top: 3%;
+  width: 12%;
+  padding-top: 2%;
 }
 
 
 #main-header h1 {
   padding-top: 1%;
-  padding-bottom: 3%;
+  padding-bottom: 2.6%;
 }
 
 
@@ -39,9 +39,9 @@ th {
   margin-right: 1%;
   margin-top: 0.5%;
   margin-bottom: 0.5%;
-  border: 1px solid white;
-  background: black;
-  color: white;
+  border: none;
+  background-color: white;
+  color: black;
   padding-top: 0.5%;
   padding-bottom: 0.5%;
 
@@ -53,22 +53,18 @@ th {
   margin-right: 2%;
   margin-top: 0.5%;
   margin-bottom: 0.5%;
-  border: 1px solid white;
-  background-color: black;
-  color: white;
+  border: none;
+  background-color: white;
+  color: black;
   padding-top: 0.5%;
   padding-bottom: 0.5%;
 
 }
 
 ::-webkit-input-placeholder {
-  color: white;
+  color: black;
+  background: white;
 }
-
-
-
-
-
 
 
 
@@ -80,18 +76,18 @@ RESULT page (including NEWS, GRAPH, ADD TO FAV button, COMMENT area)
 
 #result {
   overflow: auto;
+  padding-top: 3%;
   padding-left: 10%;
   padding-right: 10%;
   max-height: 50%;
 }
-
 
 #searchResults {
   display: none;
   width: auto;
   position: absolute;
   padding: 0.5%;
-  background-color: white;
+  background-color: black;
   z-index: 10;
   border: 1px solid black;
 }
@@ -99,13 +95,13 @@ RESULT page (including NEWS, GRAPH, ADD TO FAV button, COMMENT area)
 #searchResults p {
   margin-top: 1%;
   margin-bottom: 1%;
+  color: white;
+  background-color: black;
 }
 
 hr {
   margin-top: 0.5%;
 }
-
-/*----- Back To Fav button ------*/
 
 
 
@@ -114,26 +110,25 @@ hr {
 #news {
   overflow-y: scroll;
   color:  black;
-  width: 50%;
+  width: 45%;
   max-height: 300px;  //it doesn't work if I change it to %. something wrong with the parent
 }
 
 #news * {
-  max-width: 90%;
+  padding-left: 1%;
+  padding-right: 1%;
 }
 
 #news h3 {
   text-align: center;
   padding-top: 1%;
   padding-bottom: 1%;
-  padding
 }
 
 #news h1 {
   text-align: center;
   padding-top: 1%;
   padding-bottom: 1%;
-  padding
 }
 
 #news p {
@@ -142,21 +137,38 @@ hr {
   padding-bottom: 1%;
 }
 
+#news::-webkit-scrollbar {
+  width: 1em;
+}
+
+#news::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+#news::-webkit-scrollbar-thumb {
+  background-color: black;
+  outline: 1px solid slategrey;
+}
+
+
 
 /*----- Right column ------*/
 
 .right-column {
-  width: 50%;
+  width: 55%;
   background-color: white;
 }
 
-.right-column h1 {
-  padding-top: 3%;
-  padding-bottom: 3%;
+#company-name {
+  /*padding-top: 3%;
+  padding-bottom: 3%;*/
+  height: 5%;
+  color: black;
 }
 
 canvas {
   background-color: white;
+  width: 200%;
 }
 
 .graph {
@@ -166,6 +178,13 @@ canvas {
 }
 
 #add-fav {
+  border: none;
+  background-color: black;
+  color: white;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  padding-left: 2%;
+  padding-right: 2%;
 
 }
 
@@ -173,7 +192,14 @@ canvas {
 
 }
 
-#insert-comment {
+#add-comment {
+  border: none;
+  background-color: black;
+  color: white;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  padding-left: 2%;
+  padding-right: 2%;
 
 }
 
