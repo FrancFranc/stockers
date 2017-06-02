@@ -25,6 +25,9 @@ var app = app || {};
       return Math.max(cur, next);
     });
 
+    ctx.canvas.width = 550;
+    ctx.canvas.height = 300;
+
     Chart.scaleService.updateScaleDefaults('linear', {
       ticks: { // graph range will be 10% below min to 10% above max
         min: Math.ceil((min - (min * 0.1)) / 10) * 10, // these 2 get rounded to the nearest 10
