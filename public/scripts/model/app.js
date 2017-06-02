@@ -15,10 +15,10 @@ $(document).ready(function(){
   $('#submit-search').on('click', app.stockController.index);
   $('#show-about').on('click',function(event){
     event.preventDefault();
-    if (this.value === 'About Us'){
-      $(this).val('Close')
+    if (this.value === 'ABOUT US'){
+      $(this).val('CLOSE')
     } else {
-      $(this).val('About Us')
+      $(this).val('ABOUT US')
     }
     $('#about-us').toggle('show');
     $('#result').hide(1000);
