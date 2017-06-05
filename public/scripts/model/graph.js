@@ -25,7 +25,7 @@ var app = app || {};
       return Math.max(cur, next);
     });
 
-    ctx.canvas.width = 550;
+    ctx.canvas.width = 500;
     ctx.canvas.height = 300;
 
     Chart.scaleService.updateScaleDefaults('linear', {
